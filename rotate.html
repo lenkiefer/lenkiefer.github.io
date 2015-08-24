@@ -1,0 +1,23 @@
+<html>
+<body>
+<iframe id="frame" src="https://public.tableau.com/views/ChartGen/outlook?:embed=yes" width="800" height="600"></iframe>
+<script>
+link="https://public.tableau.com/views/ChartGen/outlook?:embed=yes";
+var i = 1;                   
+function myLoop () {
+     setTimeout(function () {
+     if (link=="https://public.tableau.com/views/ChartGen/outlook?:embed=y&:display_count=yes&:showTabs=y&embed=yes")
+       {link="https://public.tableau.com/views/HPAtestX/FreddieMacHousePriceIndex?:embed=y&:display_count=yes&:showTabs=y&embed=yes";}
+  else {link="https://public.tableau.com/views/ChartGen/outlook?:embed=y&:display_count=yes&:showTabs=y&embed=yes";};
+  document.getElementById('frame').src = link;
+      i++;                   
+      if (true) {          
+         myLoop();      
+      }   
+   }, 10000)
+}
+myLoop();
+</script>
+ 
+</body>
+<html>

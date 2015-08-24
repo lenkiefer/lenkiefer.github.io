@@ -1,16 +1,9 @@
 ---
 layout: default
-title: Home
+title: Notes
 ---
-<h1>Len Kiefer's webpage</h1>
-
-<p><em>Amazing <span class="icon-dataviz"></span> data visualizations, <span class="icon-display"></span> dynamic presentations, <span class="icon-terminal"></span> some coding and <span class="icon-excel"></span> probably a little excel.</em></p>
-
-
-
-<p>Recent posts:</p>
-
- <ul class="content">
+  <h1 class="content-listing-header sans">Notes</h1>
+  <ul class="content">
 {% for post in site.posts  %}
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
@@ -44,5 +37,12 @@ title: Home
 {% endfor %}
 
   </ul>
+
+
+
+
+
+
+
 
 
