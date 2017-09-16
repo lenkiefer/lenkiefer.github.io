@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Len Kiefer</title>
+    <link>http://lenkiefer.com/project/</link>
+    <description>Recent content in Projects on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Sat, 31 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A look back at housing&#39;s best year in a decade</title>
+      <link>http://lenkiefer.com/project/2016-12-31-year-in-review/</link>
+      <pubDate>Sat, 31 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/project/2016-12-31-year-in-review/</guid>
+      <description>THE YEAR IS DRAWING TO A CLOSE and by many measures 2016 was the best year for housing in a decade. Back in May I shared some trends on housing markets in a Tufte style document. Now that we have nearly a full year&amp;rsquo;s worth of data, let&amp;rsquo;s see how housing and mortgage markets did in 2016.
+Well, I&amp;rsquo;ve created a retrospective looking back at the full year. You can read it here.</description>
+    </item>
+    
+  </channel>
+</rss>

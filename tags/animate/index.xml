@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Animate on Len Kiefer</title>
+    <link>/tags/animate/</link>
+    <description>Recent content in Animate on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Tue, 25 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/animate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Animate a bivariate choropleth</title>
+      <link>/2017/04/25/bivariate-animate/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/04/25/bivariate-animate/</guid>
+      <description>IN THIS POST I WANT TO EXTEND ON yesterday’s post and build an animated bivariate choropleth.
+We’ll use the same data as yesterday and create a combined scatterplot with bivariate choropleth map and animate it with R.
+Let’s get right to it.
+Load dataWe’ll follow from yesterday and load our data and do some manipulations.
+In order for this to work we’ll need data from three sources:
+House Price Index Data in a .</description>
+    </item>
+    
+  </channel>
+</rss>

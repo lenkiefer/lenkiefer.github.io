@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Improving R animated GIFs with tweenr &middot; Len Kiefer</title>
+        <meta name="description" content=".col2 {columns: 2 200px; /* number of columns and width in pixels*/-webkit-columns: 2 200px; /* chrome, safari */-moz-columns: 2 200px; /* firefox */}.col3 {columns: 3 100px;-webkit-columns: 3 100px;-moz-columns: 3 100px;}RECENTLY I HAVE MADE several animated GIFs, primarily using the animation package. These gifs usually work pretty well, coming out something like this (code here).
+Unfortunately, these gifs tend to come out rather choppy.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'XXX', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Len Kiefer" href="/">Len Kiefer</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/lenkiefer">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/leonard-kiefer-51175331">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:lenkiefer@hotmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Contact" href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Getting Started with Hugo" href="/getting-started-with-hugo/">Getting Started with Hugo</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Improving R animated GIFs with tweenr</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-05-29" itemprop="datePublished">Sun, May 29, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Len Kiefer</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+<p>RECENTLY I HAVE MADE several animated GIFs, primarily using the <a href="https://cran.r-project.org/web/packages/animation/index.html">animation package</a>. These gifs usually work pretty well, coming out something like this (<a href="%7B%%20post_url%202016-05-15-mortgage-rates-some-perspective%%7D">code here</a>).</p>
+<p><img src="{{ site.url }}/img/charts_may_15_2016/rate_5_14_2016.gif" alt="stop motion rates gif"/></p>
+<p>Unfortunately, these gifs tend to come out rather choppy. I tried to get around that by using variable length sequences to alter the timing of each frame. My primitive approach involves loops and business like this:</p>
+<pre class="r"><code>  for (i in c(seq(1,365,6),seq(378,716,13),seq(1145,1574,26),seq(1587,2003,13),seq(2016,2185,6),2196) ) {</code></pre>
+<p>What I was trying to achieve with this clumsy sequence was an easing effect. <a href="http://easings.net/">Here’s a handy tipsheet</a> on easing functions with interactive examples. From the link above we have the following:</p>
+<blockquote>
+<p><strong>Easing functions</strong> specify the rate of change of a parameter over time. Objects in real life don’t just start and stop instantly, and almost never move at a constant speed. When we open a drawer, we first move it quickly, and slow it down as it comes out. Drop something on the floor, and it will first accelerate downwards, and then bounce back up after hitting the floor. -<em>easings.net</em></p>
+</blockquote>
+<p>Adding an easing effect would smooth out the animation and make it much more natural. Transitions and easing have been implemented in <a href="https://bost.ocks.org/mike/transition/">d3</a> for some time and have been used to great effect (<a href="https://bl.ocks.org/mbostock">just look at em!</a>).</p>
+<p>I’ve played around with d3 a bit and it’s truly magical. Unfortunately, d3 is not really a data analysis tool and that’s <a href="%7B%7B%20site.url%20%7D%7D/about.html">what I do</a>. Wouldn’t it be nice to be able to generate nice smooth transitions in R without having to code up in d3?</p>
+<div id="cmon-internet" class="section level2">
+<h2>C’mon internet</h2>
+<p>Fortunately, the internet does what it does and brought me to someone who had solved <em>my exact problem</em>. Turns out that <a href="https://github.com/thomasp85/tweenr">thomasp85</a> has built a <a href="https://cran.r-project.org/web/packages/tweenr/index.html">R package called tweenr</a> that does the hard work of interpolating (“tweening”) between frames to generate an easing effect.</p>
+<p>It took some experimenting to generate the effects I wanted (and I’m still exploring), but I wanted to write up my approach. There’s not a lot of examples with the tweenr package, so these examples might be helpful for others who want to create their own awesome animated GIFs with R.</p>
+<p>Today we’ll start off with just one example, with more to come later.</p>
+</div>
+<div id="house-price-gif" class="section level1">
+<h1>House Price GIF</h1>
+<p>In this example we’ll go from the GIF on the left to the GIF on the right:</p>
+<div class="col2">
+<p><img src="{{ site.url }}/img/charts_may_29_2016/ex1_notween.gif" alt="GIF no tween"/> <img src="{{ site.url }}/img/charts_may_29_2016/ex2_tween.gif" alt="GIF no tween"/></p>
+</div>
+<p>We’ll be using the same house price data from <a href="%7B%%20post_url%202016-05-08-visual-meditations-on-house-prices%%7D">my visual meditations series</a>.</p>
+<div id="set-up" class="section level3">
+<h3>Set up</h3>
+<p>This code will load the libraries we need and set up our data. You can get the text file with house prices called <em>fmhpi.txt</em> <a href="%7B%7B%20site.url%20%7D%7D/img/charts_may_8_2016/fmhpi.txt">here</a>.</p>
+<pre class="r"><code># Set up libraries
+library(&quot;ggplot2&quot;)
+library(&quot;scales&quot;)
+library(&#39;ggthemes&#39;)
+library(&quot;plyr&quot;)
+library(&quot;dplyr&quot;)
+library(&quot;data.table&quot;)
+library(&quot;animation&quot;)
+library(&quot;gganimate&quot;)
+library(&quot;tweenr&quot;)
+
+### Prepare data
+statedata &lt;- fread(&quot;fmhpi.txt&quot;) #house price data 
+statedata$date&lt;-as.Date(statedata$date, format=&quot;%m/%d/%Y&quot;)  #convert date to Date format
+
+sdata&lt;-statedata[year&gt;1999, list(date,year,state,hpi)] #truncate data to just year&gt;1999 and keep only columns we need
+
+#variables we don&#39;t want to interpolate need to be factors-not character-or tweenr will try to interpolate
+sdata$year&lt;-as.factor(sdata$year)
+sdata$state&lt;-as.factor(sdata$state)</code></pre>
+</div>
+<div id="animation-with-no-easing" class="section level2">
+<h2>Animation with no easing</h2>
+<p>First, let’s go over the animation without easing. I’m going to use the <a href="https://github.com/dgrtwo/gganimate">gganimate package</a>, which I’ve been avoiding using because I’m a data masochist and love writing loops. By using gganimate, we can crate the GIF with less code. We lose some control, but gain some efficiency.</p>
+<p>We’re going to make a fairly simple data visualization. We’re going to plot the <a href="http://www.freddiemac.com/finance/house_price_index.html">Freddie Mac House Price Index (FMHPI)</a> from January 2000 through March 2016, comparing the national index to each of the 50 states and the District of Columbia.</p>
+<p>We’ll be a little inefficient here and append back on the house price index for the national level to our state data set. We could probably avoid this step, but I couldn’t get it to work with gganimate. Then we’ll plot a GIF for each state comparing the state index to the national index.</p>
+<p>The transitions will be choppy.</p>
+<p><strong>Note 04/13/2017: This post has been updated to correct for a mysterious data frame called dt3, which was not created but called for in the original code. I have replaced dt3 with a data frame that does exist. Now the code should work. Thanks to <span class="citation">[@butterflyology]</span>(<a href="https://twitter.com/butterflyology" class="uri">https://twitter.com/butterflyology</a>) for pointing this out <span class="citation">[@dataandme]</span>(<a href="https://twitter.com/dataandme" class="uri">https://twitter.com/dataandme</a>) for sharing this post and letting others find it almost a year later.</strong></p>
+<pre class="r"><code># Create a new variable that equals the US index and merge back to main dataset
+# we&#39;ll use the US average as referecne line
+data.us&lt;-sdata[state==&quot;US&quot;,]
+data.us&lt;-dplyr::rename(data.us, ushpi=hpi) #rename hpi column US HPI
+data.us$state=NULL   #drop state column
+
+#Create data set for the no easing animation
+data.noease&lt;-merge(sdata,data.us,by=&quot;date&quot;)  #create static data set
+
+#animate through gganimate
+
+p&lt;-
+  ggplot(data=data.noease,aes(x=date,y=hpi,frame=state,label=state))+
+  geom_line(aes(cumulative=F),color=&quot;red&quot;,size=1.2)+
+  geom_line(aes(x=date,y=ushpi,frame=state),color=&quot;black&quot;)+
+  theme_minimal()+  theme(plot.title=element_text(face=&quot;bold&quot;,size=12))+
+
+  # Orginally this code was called, but dt3 doesn&#39;t exist so it won&#39;t work
+  
+  #geom_text(data=dt3[date==&quot;2000-12-01&quot;],aes(x=date,y=ushpi,label=&quot;US&quot;),nudge_y=5, color=&quot;black&quot;)+
+  
+  # replace with this and it will work:
+  
+    geom_text(data=data.us[date==&quot;2000-12-01&quot;],inherit.aes=F,aes(x=date,y=ushpi,label=&quot;US&quot;),nudge_y=5, color=&quot;black&quot;)+
+  
+  theme(plot.caption=element_text(hjust=0))+
+  labs(y=&quot;House Price Index (Dec 2000=100)&quot;,
+       x=&quot;&quot;,
+       caption=&quot;@lenkiefer Source: Freddie Mac House Price Index (Dec 2000 = 100, NSA)&quot;,
+       #subtitle=paste(as.character(statedata[year==yy &amp; month==mm &amp; state==&quot;US&quot;]$date,format=&quot;%b-%Y&quot;)),
+       title=&quot;State house price trends&quot;)
+
+gg_animate(p, &quot;ex1_notween.gif&quot;, title_frame =T, ani.width = 600, 
+           ani.height = 450, interval=0.2)</code></pre>
+<p>Run it and you get:</p>
+<p><img src="{{ site.url }}/img/charts_may_29_2016/ex1_notween.gif" alt="GIF no tween"/></p>
+</div>
+<div id="using-tweenr" class="section level2">
+<h2>Using tweenr</h2>
+<p>The GIF above is not bad, but wouldn’t it be nice to have a smooth transition? Fortunately, the tweenr package will do all the hard word and create intermediate frames between transitions to give a smoother animation effect.</p>
+<p>tweenr is a great package, but it’s relatively new and doesn’t have a lot of examples I could find. So it took a little tinkering to get the effects I want. The approach I settled on was to use the <em>tween_states</em> function. To use this function you need a sequence of data sets, each one containing a state you want to transition between.</p>
+<p>The code below gets us to the tween_states function:</p>
+<pre class="r"><code>##### Set up data for animation with easing using tweenr ##### 
+
+
+states&lt;-unique(sdata[state!=&quot;US&quot;]$state)  #get a list of states excluding the US
+
+#add the &quot;US&quot; at the top and the bottomw of the list of states 
+states2&lt;-factor(c(as.character(&quot;US&quot;),as.character(states),&quot;US&quot;))
+
+# function to create list of data sets from our data (by state)
+myf&lt;-function(mystate){as.data.frame(sdata[state==mystate])}
+
+# use lapply to generate the list of data sets:
+my.list2&lt;-lapply(states2,myf)
+
+# Apply tweenr:
+
+tf &lt;- tween_states(my.list2, tweenlength= 2, statelength=3, ease=rep(&#39;cubic-in-out&#39;,51),nframes=300)</code></pre>
+<div id="looking-at-the-tweenr-function" class="section level3">
+<h3>Looking at the tweenr function</h3>
+<p>From the <a href="https://cran.r-project.org/web/packages/tweenr/tweenr.pdf">tweenr documentation</a> we have:</p>
+<p><img src="{{ site.url }}/img/charts_may_29_2016/tween_states.PNG" alt="tween states" style="width: 450px;"/></p>
+<p>I’ve created 53 datasets corresponding to the 50 states plus the District of Columbia, padded with the US at the top and bottom. Then I used the lapply function along with a small user defined function to create the list of data.frames (tweenr doesn’t like data.tables) to feed into the tween_states function.</p>
+<p>I set the parameters tweenlength to 2 and statelength to 3, meaning we will spend 3/2 as much time pausing between animations and transitioning between them. I chose the “cubic-in-out” easing function because I like how it looks. Tweenr lets you choose from many different easing functions. I’m looking forward to try some others out.</p>
+<pre class="r"><code>tf &lt;- tween_states(my.list2, tweenlength= 2, statelength=3, ease=rep(&#39;cubic-in-out&#39;,51),nframes=300)
+dtf&lt;-data.table(tf)  # Make tweenr output a data table 
+
+dtus&lt;-sdata[state==&quot;US&quot;,]  #pull out just the &quot;US
+dtus&lt;-dplyr::rename(dtus, ushpi=hpi) #rename hpi column US HPI
+dtus$state=NULL   #drop state column
+
+#Create data set for easing animation
+data.ease&lt;-merge(dtf,dtus,by=&quot;date&quot;)  #merge back US as its own variable
+
+
+# create the animation
+p&lt;-
+  ggplot(data=dtf2,aes(x=date,y=hpi,frame=.frame,label=state))+
+  # setting cumluative=T would leave a trail of lines, which I don&#39;t want here:
+  geom_line(aes(cumulative=F),color=&quot;red&quot;,size=1.2)+
+  # add us reference line:
+  geom_line(aes(x=date,y=ushpi,frame=.frame),color=&quot;black&quot;)+
+  geom_text(data=dtf[date==max(dtf$date)],nudge_y=-5, color=&quot;red&quot;)+
+  theme_minimal()+  theme(plot.title=element_text(face=&quot;bold&quot;,size=12))+
+  geom_text(data=dtf2[date==&quot;2000-12-01&quot;],aes(x=date,y=ushpi,frame=.frame,label=&quot;US&quot;),nudge_y=5, color=&quot;black&quot;)+
+  theme(plot.caption=element_text(hjust=0))+
+  labs(y=&quot;House Price Index (Dec 2000=100)&quot;, x=&quot;&quot;,
+       caption=&quot;@lenkiefer Source: Freddie Mac House Price Index (Dec 2000 = 100, NSA)&quot;,
+       title=&quot;State house price trends&quot;)
+
+#use gganimate to make the GIF:
+gganimate(p, &quot;ex2_tween.gif&quot;, title_frame = F, ani.width = 600, 
+           ani.height = 450, interval=0.05)</code></pre>
+<p>Run it and you get this result:</p>
+<p><img src="{{ site.url }}/img/charts_may_29_2016/ex2_tween.gif" alt="GIF no tween"/></p>
+<p>Not bad!</p>
+</div>
+</div>
+<div id="more-examples" class="section level2">
+<h2>More examples</h2>
+<p>Tweenr is a great package. I’m going back and refreshing to some of my earlier GIFs, and these nice transitions open up some great possibilities. I’ll post some additional examples later, but here are a couple thoughts:</p>
+<p><img src="{{ site.url }}/img/charts_may_29_2016/ex3_tween.gif" alt="GIF bar tween"/></p>
+<p><img src="{{ site.url }}/img/charts_may_29_2016/ex4_tween.gif" alt="GIF line tween"/></p>
+</div>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Improving%20R%20animated%20GIFs%20with%20tweenr&url=%2fimproving-r-animated-gifs-with-tweenr%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fimproving-r-animated-gifs-with-tweenr%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fimproving-r-animated-gifs-with-tweenr%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Improving%20R%20animated%20GIFs%20with%20tweenr&url=%2fimproving-r-animated-gifs-with-tweenr%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Len Kiefer" href="/">Len Kiefer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2017 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

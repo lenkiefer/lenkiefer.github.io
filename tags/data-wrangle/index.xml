@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Wrangle on Len Kiefer</title>
+    <link>/tags/data-wrangle/</link>
+    <description>Recent content in Data Wrangle on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-wrangle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plotting house price trends with FRED and R</title>
+      <link>/2017/04/11/fred-plot/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/04/11/fred-plot/</guid>
+      <description>IN THIS POST I AM going to share some useful code to create some custom plots using the St Louis Federal Reserve Economic Database (FRED). While the FRED page has some nice chart customization options, I’m going to import the data into R with the quantmod package and draw the plots.
+I find myself doing these types of things often enough that I thought you might find these bits o’ code useful.</description>
+    </item>
+    
+  </channel>
+</rss>

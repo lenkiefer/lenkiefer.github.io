@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>More map visualizations &middot; Len Kiefer</title>
+        <meta name="description" content="IN THIS POST I&rsquo;M JUST GOING TO share a few data visualizations I&rsquo;ve been working on today. For most, no code, but these build off my previous posts here and here so you can check there for hints and I&rsquo;ll post some more examples with code later.
+Population maps This one shows the evolution of population by county without the distribution plots I included last time. We discussed these data in our last post.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://lenkiefer.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66905937-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Len Kiefer" href="http://lenkiefer.com/">Len Kiefer</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/lenkiefer">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/leonard-kiefer-51175331">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:lenkiefer@hotmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Topics" href="/tag/">Topics</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/content/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">More map visualizations</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-08-24" itemprop="datePublished">Wed, Aug 24, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Len Kiefer</a>
+            </span>
+        </span>
+    </p>                 
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>IN THIS POST I&rsquo;M JUST GOING TO share a few data visualizations I&rsquo;ve been working on today. For most, no code, but  these build off my previous posts <a href="../../../../2016/08/21/maps-mortgages-and-me">here</a> and <a href="../../../../2016/08/23/US-pop-map-1790-2010">here</a> so you can check there for hints and I&rsquo;ll post some more examples with code later.</p>
+
+<h1 id="population-maps">Population maps</h1>
+
+<p>This one shows the evolution of population by county without the distribution plots I included last time. We discussed <a href="http://conservancy.umn.edu/handle/11299/181605">these data</a> in our <a href="../../../../2016/08/23/US-pop-map-1790-2010">last post</a>.</p>
+
+<p><img src="../../../../img/charts_aug_24_2016/pop gif3.gif" alt="population map only"/></p>
+
+<p>In this second post I combined the population map with a dot chart showing the evolution of state population.</p>
+
+<p><img src="../../../../img/charts_aug_24_2016/pop gif4.gif" alt="population map with state totals"/></p>
+
+<h1 id="house-price-charts">House price charts</h1>
+
+<p>This chart combines a map with sparkline-type line charts showing the evolution of annual percentage changes in the FHFA Purchase-Only <a href="http://www.fhfa.gov/DataTools/Downloads/pages/house-price-index.aspx">House Price Index</a>.</p>
+
+<p><img src="../../../../img/charts_aug_24_2016/fhfa hpa2.gif" alt="population map with state totals" style="height: 650px;"/></p>
+
+<p>Because the house price data is conveniently available in a text file from the FHFA webpage we can easily construct a static version of this chart (with just the map) using the code below.</p>
+
+<p>{% highlight r
+#load some libraries
+library(data.table)
+library(reshape2)
+library(stringr)
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(rgeos)
+library(maptools)
+library(albersusa)
+library(dplyr)
+library(tidyr)
+library(ggalt)
+library(viridis)
+library(zoo)</p>
+
+<p>#read in data available as a text file from the FHFA website:
+fhfa.data&lt;-fread(&ldquo;<a href="http://www.fhfa.gov/DataTools/Downloads/Documents/HPI/HPI_PO_state.txt&quot;">http://www.fhfa.gov/DataTools/Downloads/Documents/HPI/HPI_PO_state.txt&quot;</a>)
+#create annual house price growth in the SA index:
+fhfa.data[,hpa12:=index_sa/shift(index_sa,4)-1,by=state]
+fhfa.data[,iso_3166_2:=state]  #rename state to match usa_composite
+fhfa.data[,date:=as.Date(ISOdate(yr,qtr*3,1))] #make a date (don&rsquo;t need it here)
+fhfa.data[,mylabel:=paste0(&ldquo;Q&rdquo;,qtr,&rdquo;:&ldquo;,yr)]  #create date label for plot
+#do map stuff
+states&lt;-usa_composite()
+smap&lt;-fortify(states,region=&ldquo;fips_state&rdquo;)
+states@data &lt;- left_join(states@data, fhfa.data, by = &ldquo;iso_3166_2&rdquo;)</p>
+
+<p>#make plots:
+ggplot() +
+  geom_map(data = smap, map = smap,
+           aes(x = long, y = lat, map_id = id),
+           color = &ldquo;#2b2b2b&rdquo;, size = 0.05, fill = NA) +
+  geom_map(data =subset(states@data,yr&gt;2004 &amp; qtr==2), map = smap,
+           aes( map_id = fips_state,fill=hpa12),
+           color = &ldquo;gray&rdquo;, size = .25) +
+  theme_map( base_size = 12) +facet_wrap(~mylabel,ncol=3)+
+  theme(plot.title=element_text( size = 16, margin=margin(b=10))) +
+  theme(plot.subtitle=element_text(size = 14, margin=margin(b=-20))) +
+  theme(plot.caption=element_text(size = 9, margin=margin(t=-15))) +
+  coord_proj(us_laea_proj) +   labs(title=&ldquo;&rdquo;,subtitle=&ldquo;&rdquo; ) +
+  scale_fill_viridis(name = &ldquo;&rdquo;, discrete=F,option=&ldquo;D&rdquo;,end=0.95,
+                     direction=-1,limits=c(-0.35,0.35),label=percent)+
+  theme(legend.position = &ldquo;top&rdquo;) +theme(plot.caption=element_text(hjust=0,vjust=1,margin=margin(t=10)))+
+  labs(title=paste0(&ldquo;Annual House Price Growth (Y/Y %)&rdquo;),
+       caption=&ldquo;@lenkiefer Source: FHFA Purchase-Only House Price Index (SA)&ldquo;)
+{% endhighlight</p>
+
+<p><img src="/img/Rfig/fig-mymap-1-1.svg" alt="plot of chunk fig-mymap-1" /></p>
+
+<p>We use a small multiple to show how annual percentage gains in house prices have varied from the second quarter of 2005 through the latest data for the second quarter of 2016.  The map part of the gif just morphs between facets of the plot above.</p>
+
+<p>We can also construct a static version of the sparklines fairly easily:</p>
+
+<p>{% highlight r
+ mygraph.data&lt;-subset(states@data,(yr&gt;2004 &amp; state !=&ldquo;DC&rdquo;))</p>
+
+<p>ggplot(data=mygraph.data,aes(x=date,y=hpa12,group=state))+theme_minimal()+
+  geom_line()+<br />
+  scale_color_viridis(name = &ldquo;Annual House Price Growth (Y/Y %)&rdquo;, discrete=F,option=&ldquo;D&rdquo;,end=0.95)+
+  scale_y_continuous(label=percent, breaks=c(-.2,-.1,0,.1,.2))+
+  theme(axis.text.y=element_text(size=6))+
+    theme(axis.text.x=element_text(size=6))+
+    geom_area(fill=viridis(5)[3],alpha=0.5)+  #add shading to make seeing +/- Zero easier
+  scale_x_date()+
+  geom_point(data=subset(mygraph.data,date==max(mygraph.data$date)),
+             aes(color=hpa12),alpha=0.75,size=2)+
+  theme(legend.position = &ldquo;none&rdquo;)+  facet_wrap(~state,ncol=10)+
+  theme(plot.caption=element_text(hjust=0))+
+  labs(x=&ldquo;&rdquo;,y=&ldquo;&rdquo;,title=&ldquo;Annual House Price Growth (Y/Y %)&rdquo;,
+       caption=&ldquo;@lenkiefer Source: FHFA Purchase-Only House Price Index (SA)&ldquo;)
+{% endhighlight</p>
+
+<p><img src="/img/Rfig/fig-mygraph-1-1.svg" alt="plot of chunk fig-mygraph-1" /></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/dataviz/">dataviz</a>, 
+            
+                <a href="/tags/maps/">maps</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=More%20map%20visualizations via %40lenkiefer&url=http%3a%2f%2flenkiefer.com%2f2016%2f08%2f24%2fmore-maps%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flenkiefer.com%2f2016%2f08%2f24%2fmore-maps%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2flenkiefer.com%2f2016%2f08%2f24%2fmore-maps%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=More%20map%20visualizations&url=http%3a%2f%2flenkiefer.com%2f2016%2f08%2f24%2fmore-maps%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Len Kiefer" href="http://lenkiefer.com/">Len Kiefer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; Len Kiefer 2017 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright" style="font-size:50%;">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a> (modified by Len Kiefer)</span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://lenkiefer.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://lenkiefer.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://lenkiefer.com/js/scripts.js"></script>
+    </body>
+</html>
+

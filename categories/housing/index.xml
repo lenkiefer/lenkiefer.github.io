@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Housing on Len Kiefer</title>
+    <link>http://lenkiefer.com/categories/housing/</link>
+    <description>Recent content in Housing on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Sun, 28 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/categories/housing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recent House Price Trends</title>
+      <link>http://lenkiefer.com/2016/02/28/house-price-trends/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/02/28/house-price-trends/</guid>
+      <description>{% include JB/setup
+National house prices rise 6.2% Freddie Mac released its full year 2015 house price index and an interactive data visualization. The seasonally-adjusted national index increased 6.2 percent year-over-year and is now 29.6 percent above the post-recession low, and just 4.1 percent below the (nominal) pre-recession peak (see graph below).
+While national house price growth has been strong, there is considerable variation across the country. Some states and metro areas are already well above their pre-recession (nominal) peak, while other still have lots of ground to make up.</description>
+    </item>
+    
+  </channel>
+</rss>

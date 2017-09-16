@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economy on Len Kiefer</title>
+    <link>http://lenkiefer.com/categories/economy/</link>
+    <description>Recent content in Economy on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Wed, 04 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/categories/economy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>House price data viz</title>
+      <link>http://lenkiefer.com/2016/05/04/house-price-data-viz/</link>
+      <pubDate>Wed, 04 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/04/house-price-data-viz/</guid>
+      <description>TO HELP UNDERSTAND TRENDS in house prices, I have a couple of data visualizations for the Freddie Mac house price index.
+Viz 1: House Price Dynamics The first compares the quarterly and annual appreciation for house prices across the 50 states plus the District of Columbia.
+In this visualization, each dot represent a state (or D.C.). The horizontal X axis measures the quarter-over-quarter annualized percentage change in the Freddie Mac house price index.</description>
+    </item>
+    
+  </channel>
+</rss>

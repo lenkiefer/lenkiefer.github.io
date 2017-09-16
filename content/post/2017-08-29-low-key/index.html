@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Low-key dataviz &middot; Len Kiefer</title>
+        <meta name="description" content="IN THIS POST I WANT TO REWORK SOME VISUALIZATIONS we&rsquo;ve already made.
+Inspired by this compendium of clean graphics in R, I want to remake some of visualizations we made earlier this year in a low-key manner.
+Sometimes the visualizations we make here can be pretty intense. Sometimes they are quite intricate, or use animation, or have a lot going on with them. But sometimes you need a simple, low-key visualization to make your point.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'XXX', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Len Kiefer" href="/">Len Kiefer</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/lenkiefer">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/leonard-kiefer-51175331">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:lenkiefer@hotmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Contact" href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Getting Started with Hugo" href="/getting-started-with-hugo/">Getting Started with Hugo</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Low-key dataviz</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2017-08-29" itemprop="datePublished">Tue, Aug 29, 2017</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Len Kiefer</a>
+            </span>
+        </span>
+    </p>
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    
+
+<p>IN THIS POST I WANT TO REWORK SOME VISUALIZATIONS we&rsquo;ve already made.</p>
+
+<p>Inspired by <a href="http://shinyapps.org/apps/RGraphCompendium/index.php">this compendium of clean graphics</a> in <a href="https://www.r-project.org/">R</a>, I want to remake some of visualizations we made earlier this year in a low-key manner.</p>
+
+<p>Sometimes the visualizations we make here can be pretty intense.  Sometimes they are quite intricate, or use animation, or have a lot going on with them.  But sometimes you need a simple, low-key visualization to make your point. Sometimes, after being overstimulated a low-key visualization can be a welcome sight.</p>
+
+<p>For this post, we&rsquo;ll revisit the house price visualizations we made <a href="{% post_url 2017-08-07-house-price-trends %}">in this post</a> earlier this month.</p>
+
+<p>Like in that post, we&rsquo;ll use the Freddie Mac House Price Index (<a href="http://www.freddiemac.com/finance/fmhpi/about.html">link to source</a>) data. For all the details on data wrangling check out that post.</p>
+
+<p>This post assumes we downloaded the state and U.S. data <a href="http://www.freddiemac.com/research/docs/states.xls">available here in .xls format</a> and saved it in your data directory.</p>
+
+<p>{% highlight r %}
+#####################################################################################</p>
+
+<h2 id="load-libraries">Load Libraries</h2>
+
+<p>#####################################################################################
+library(tidyverse)
+library(scales)
+library(readxl)</p>
+
+<p>#####################################################################################</p>
+
+<h2 id="load-data">Load data</h2>
+
+<p>#####################################################################################</p>
+
+<p>df&lt;-read_excel(&ldquo;data/states.xls&rdquo;,
+               sheet = &ldquo;State Indices&rdquo;,
+               range=&ldquo;B6:BB516&rdquo; )</p>
+
+<p>df$date&lt;-seq.Date(as.Date(&ldquo;1975-01-01&rdquo;),as.Date(&ldquo;2017-06-01&rdquo;),by=&ldquo;1 month&rdquo;)</p>
+
+<p>#####################################################################################</p>
+
+<h2 id="manipulate-data-data">Manipulate data data</h2>
+
+<p>#####################################################################################
+df.state&lt;-df %&gt;% gather(geo,hpi,-date) %&gt;% mutate(type=&ldquo;state&rdquo;,state=geo) %&gt;%
+  group_by(geo) %&gt;%
+  mutate(hpa=hpi/lag(hpi,12)-1) %&gt;% ungroup() %&gt;%
+  group_by(date) %&gt;%
+  mutate(us.hpa=hpa[geo==&ldquo;United States not seasonally adjusted&rdquo;],
+         us.hpi=hpi[geo==&ldquo;United States not seasonally adjusted&rdquo;]) %&gt;%
+  ungroup() %&gt;% mutate(up=ifelse(hpa&gt;us.hpa,hpa,us.hpa),
+                       down=ifelse(hpa&lt;=us.hpa,hpa,us.hpa),
+                       dlabel=paste(as.character(date,format=&ldquo;%B-%Y&rdquo;),&rdquo; \n &ldquo;)) %&gt;%
+  ungroup() %&gt;%
+  filter( !( state %in% c(&ldquo;United States not seasonally adjusted&rdquo;,
+                         &ldquo;United States seasonally adjusted&rdquo;))) %&gt;%
+  group_by(state) %&gt;% mutate(id = row_number()) %&gt;% ungroup()</p>
+
+<p>#####################################################################################</p>
+
+<h2 id="create-u-s-only-data">Create U.S. only data</h2>
+
+<p>#####################################################################################</p>
+
+<p>df.us&lt;-df %&gt;% select(&ldquo;United States seasonally adjusted&rdquo;,date) %&gt;%
+  gather(geo,hpi,-date) %&gt;% mutate(type=&ldquo;US&rdquo;,state=geo) %&gt;%
+  mutate(hpa=hpi/shift(hpi,12)-1,         hpa1=hpi/shift(hpi,1)-1)
+{% endhighlight %}</p>
+
+<p>Let&rsquo;s make a simple plot of the U.S. house price index level.</p>
+
+<p>We&rsquo;ll first make it using <a href="http://ggplot2.tidyverse.org/">ggplot2</a> like we did last time.</p>
+
+<p>{% highlight r %}
+plot.hpa&lt;-
+  ggplot(data=filter(df.us,year(date)&gt;1999), aes(x=date,y=hpa,label=round(hpa,0)))+
+  geom_line()+theme_minimal()+
+  scale_y_continuous(labels=percent)+
+  labs(x=&ldquo;&rdquo;, y=&ldquo;&rdquo;,
+       title=&ldquo;12-month percent change&rdquo;,
+       subtitle=&ldquo;U.S. House price index&rdquo;,
+       caption=&ldquo;@lenkiefer Source: Freddie Mac House Price Index (SA)&ldquo;)+
+  theme(plot.title=element_text(size=14,face=&ldquo;bold&rdquo;),
+        plot.subtitle=element_text(size=10,face=&ldquo;italic&rdquo;),
+        plot.caption=element_text(hjust=0,size=8),
+        axis.ticks.length=unit(0.25,&ldquo;cm&rdquo;)) +
+  geom_point(data=tail(df.us,1),color=&ldquo;red&rdquo;,size=3,alpha=0.82)+
+    geom_hline(yintercept=tail(df.us,1)$hpa,color=&ldquo;red&rdquo;,linetype=2)+
+    geom_hline(yintercept=0,color=&ldquo;black&rdquo;,linetype=2)
+plot.hpa
+{% endhighlight %}</p>
+
+<p><img src="/img/Rfig/08-29-2017-simple-1-1.svg" alt="plot of chunk 08-29-2017-simple-1" /></p>
+
+<p>Now let&rsquo;s make a similar plot using base R. This will require us to add elements one at a time.</p>
+
+<p>{% highlight r %}</p>
+
+<h1 id="subset-data">subset data</h1>
+
+<p>df.plot&lt;-filter(df.us, year(date)&gt;1999)</p>
+
+<h1 id="set-ticks-at-min-and-max-of-x-axis">set ticks at min and max of x axis</h1>
+
+<p>ticks &lt;- c(min(df.plot$date),max(df.plot$date))</p>
+
+<h1 id="set-up-graph-parameters">set up graph parameters</h1>
+
+<p>par(cex.main = 1.5, mar = c(6, 6, 6, 6) + 0.1,
+      mgp = c(3.5, 1, 0), cex.lab = 1,
+      font.lab = 2, cex.axis = 1.3, bty = &ldquo;n&rdquo;, las = 1)</p>
+
+<h1 id="start-making-our-plot">start making our plot</h1>
+
+<p>plot(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;,  xaxt = &ldquo;n&rdquo;,yaxt=&ldquo;n&rdquo;,
+     xlab=&ldquo;&rdquo;,ylab=&ldquo;12-month % change&rdquo;, lwd=2,
+     ylim=c(min(pretty(df.plot$hpa)), max(pretty(df.plot$hpa))))</p>
+
+<h1 id="add-x-axis">Add x axis</h1>
+
+<p>axis(1, at=ticks, labels = as.character(ticks,format=&ldquo;%b-%Y&rdquo;),hadj=0.5)</p>
+
+<h1 id="add-y-axis">Add y axis</h1>
+
+<p>axis(2, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa)))</p>
+
+<h1 id="add-secondary-y-axis">Add secondary Y axis</h1>
+
+<p>axis(4, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa)))</p>
+
+<h1 id="add-secondary-y-axis-label">Add secondary Y axis label</h1>
+
+<p>mtext(&ldquo;12-month % change&rdquo;,side=4,line=4,las=0,font=2)</p>
+
+<h1 id="add-shading-under-curve">Add shading under curve</h1>
+
+<p>polygon(c(df.plot$date,rev(df.plot$date)),
+        c(rep(0,length(df.plot$hpa)),rev(df.plot$hpa)),
+        col=rgb(0, 0, 0,0.05), border=NA)
+abline(h=0,lty=2,col=&ldquo;gray&rdquo;)</p>
+
+<h1 id="add-title-and-caption-called-sub-in-base-r">add title, and caption (called sub in base R)</h1>
+
+<p>title(main=&ldquo;U.S. House Price Trends&rdquo;,
+      sub=&ldquo;@lenkiefer Source: Freddie Mac House Price Index (SA)\n&rdquo;, adj=0)
+mtext(&ldquo;12-month percent change in house prices&rdquo;,adj=0)
+{% endhighlight %}</p>
+
+<p><img src="/img/Rfig/08-29-2017-simple-2-1.svg" alt="plot of chunk 08-29-2017-simple-2" /></p>
+
+<p>We can create a function to filter states and plot individual ones.  Here we look at California and Texas.</p>
+
+<p>{% highlight r %}
+#####################################################################################</p>
+
+<h2 id="base-r-function-for-line-plot">Base R function for line plot</h2>
+
+<p>#####################################################################################</p>
+
+<p>myplot&lt;- function (s=&ldquo;CA&rdquo;, ymin=2008){
+  df.plot&lt;-filter(df.state,state==s,year(date)&gt;=ymin)
+  ticks &lt;- c(min(df.plot$date),max(df.plot$date))
+  par(cex.main = 1.5, mar = c(6, 6, 6, 6) + 0.1,
+      mgp = c(3.5, 1, 0), cex.lab = 1,
+      font.lab = 2, cex.axis = 1.3, bty = &ldquo;n&rdquo;, las = 1)
+plot(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;,  xaxt = &ldquo;n&rdquo;,yaxt=&ldquo;n&rdquo;,
+     xlab=&ldquo;&rdquo;,ylab=&ldquo;12-month % change&rdquo;, lwd=2,
+     ylim=c(min(pretty(df.plot$hpa)), max(pretty(df.plot$hpa))))
+axis(1, at=ticks, labels = as.character(ticks,format=&ldquo;%b-%Y&rdquo;),hadj=0.5)
+axis(2, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa)))
+axis(4, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa))     )
+mtext(&ldquo;12-month % change&rdquo;,side=4,line=4,las=0,font=2)</p>
+
+<p>polygon(c(df.plot$date,rev(df.plot$date)),
+        c(rep(0,length(df.plot$hpa)),rev(df.plot$hpa)),
+        col=rgb(0, 0, 0,0.05), border=NA)
+abline(h=0,lty=2,col=&ldquo;gray&rdquo;)
+title(main=paste(s,&ldquo;House Price Trends&rdquo;),
+      sub=&ldquo;@lenkiefer Source: Freddie Mac House Price Index (NSA)\n&rdquo;, adj=0)
+mtext(&ldquo;12-month percent change in house prices&rdquo;,adj=0)
+}
+myplot(s=&ldquo;CA&rdquo;)
+{% endhighlight %}</p>
+
+<p><img src="/img/Rfig/08-29-2017-simple-3-1.svg" alt="plot of chunk 08-29-2017-simple-3" /></p>
+
+<p>{% highlight r %}
+myplot(s=&ldquo;TX&rdquo;)
+{% endhighlight %}</p>
+
+<p><img src="/img/Rfig/08-29-2017-simple-3-2.svg" alt="plot of chunk 08-29-2017-simple-3" /></p>
+
+<p>We could also animate it.</p>
+
+<p>{% highlight r %}
+myplot2&lt;- function (dmax=dlist[1],s=&ldquo;CA&rdquo;, ymin=1999){</p>
+
+<p>df.plot&lt;-filter(df.state,state==s,year(date)&gt;=ymin)
+  df.plot2&lt;-filter(df.state,state==s,year(date)&gt;=ymin &amp; date&lt;=dmax)</p>
+
+<p>ticks &lt;- c(min(df.plot2$date),max(df.plot2$date))
+  par(cex.main = 1.5, mar = c(6, 6, 6, 6) + 0.1,
+      mgp = c(3.5, 1, 0), cex.lab = 1,
+      font.lab = 2, cex.axis = 1.3, bty = &ldquo;n&rdquo;, las = 1)
+plot(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;,  xaxt = &ldquo;n&rdquo;,yaxt=&ldquo;n&rdquo;,
+     xlab=&ldquo;&rdquo;,ylab=&ldquo;12-month % change&rdquo;, lwd=0,col=NA,
+     ylim=c(min(pretty(df.plot$hpa)), max(pretty(df.plot$hpa))))</p>
+
+<p>lines(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;, col=NA)
+lines(df.plot2$date, df.plot2$hpa, type=&ldquo;l&rdquo;,   lwd=2)</p>
+
+<p>axis(1, at=ticks, labels = as.character(ticks,format=&ldquo;%b-%Y&rdquo;),hadj=0.5)
+axis(2, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa)))
+axis(4, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa))     )
+mtext(&ldquo;12-month % change&rdquo;,side=4,line=4,las=0,font=2)</p>
+
+<p>polygon(c(df.plot2$date,rev(df.plot2$date)),
+        c(rep(0,length(df.plot2$hpa)),rev(df.plot2$hpa)),
+        col=rgb(0, 0, 0,0.05), border=NA)
+abline(h=0,lty=2,col=&ldquo;gray&rdquo;)
+title(main=paste(s,&ldquo;House Price Trends&rdquo;),
+      sub=&ldquo;@lenkiefer Source: Freddie Mac House Price Index (NSA)\n&rdquo;, adj=0)
+mtext(&ldquo;12-month percent change in house prices&rdquo;,adj=0)
+}</p>
+
+<h1 id="set-yourdirectory-equal-to-the-place-where-you-want-to-save-image-files">Set YOURDIRECTORY equal to the place where you want to save image files</h1>
+
+<h1 id="base-r-seems-much-faster-than-ggplot2">Base R seems much faster than ggplot2</h1>
+
+<p>mydir&lt;-&ldquo;YOURDIRECTORY&rdquo;</p>
+
+<p>myf&lt;- function (i=1){
+  file_path = paste0(mydir, &ldquo;/plot-&rdquo;,4000+i ,&ldquo;.png&rdquo;)
+  png(filename=file_path)
+  myplot2(dlist[i])
+  dev.off()
+}</p>
+
+<h1 id="loop-for-making-dataviz-also-could-use-purrr-map">loop for making dataviz, also could use purrr::map()</h1>
+
+<p>N&lt;-length(dlist)
+for (i in 1:(N+10)) {
+  file_path = paste0(mydir, &ldquo;/plot-&rdquo;,4000+i ,&ldquo;.png&rdquo;)
+  png(filename=file_path, width = 600, height = 480, units = &ldquo;px&rdquo;)
+  myplot2(dlist[min(i,length(dlist))],ymin=1995)
+  dev.off()
+  print(paste(i,&ldquo;out of&rdquo;,length(dlist)))
+}</p>
+
+<h1 id="navigate-to-yourdirectory-and-run-the-following-to-create-gif">Navigate to YOURDIRECTORY and run  the following to create gif</h1>
+
+<h1 id="you-need-imagemagick-to-run-this">(you need ImageMagick to run this)</h1>
+
+<h1 id="magick-convert-delay-10-loop-0-png-hpi-gif">magick convert -delay 10 loop -0 *.png  hpi.gif</h1>
+
+<p>{% endhighlight %}</p>
+
+<p><img src="{{ site.url}}/img/charts_aug_29_2017/hpinew.gif"></p>
+
+<p>Or arrange multiple plots into one:</p>
+
+<p>{% highlight r %}</p>
+
+<h1 id="get-a-list-of-dates">get a list of dates</h1>
+
+<p>dlist&lt;-unique(filter(df.state,year(date)&gt;1999)$date)
+N&lt;-length(dlist)</p>
+
+<p>myplot3&lt;- function (dmax=dlist[N],s=&ldquo;CA&rdquo;, ymin=1999){</p>
+
+<p>df.plot&lt;-filter(df.state,state==s,year(date)&gt;=ymin)
+  df.plot2&lt;-filter(df.state,state==s,year(date)&gt;=ymin &amp; date&lt;=dmax)</p>
+
+<p>ticks &lt;- c(min(df.plot2$date),max(df.plot2$date))</p>
+
+<p>plot(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;,  xaxt = &ldquo;n&rdquo;,yaxt=&ldquo;n&rdquo;,
+       xlab=&ldquo;&rdquo;,ylab=&ldquo;12-month % change&rdquo;, lwd=0,col=NA,
+       ylim=c(min(pretty(df.plot$hpa)), max(pretty(df.plot$hpa))))</p>
+
+<p>lines(df.plot$date, df.plot$hpa, type=&ldquo;l&rdquo;, col=NA)
+  lines(df.plot2$date, df.plot2$hpa, type=&ldquo;l&rdquo;,   lwd=2)</p>
+
+<p>axis(1, at=ticks, labels = as.character(ticks,format=&ldquo;%b-%Y&rdquo;),hadj=0.5)
+  axis(2, at=pretty(df.plot$hpa), labels=percent(pretty(df.plot$hpa)))
+  polygon(c(df.plot2$date,rev(df.plot2$date)),
+          c(rep(0,length(df.plot2$hpa)),rev(df.plot2$hpa)),
+          col=rgb(0, 0, 0,0.05), border=NA)
+  abline(h=0,lty=2,col=&ldquo;gray&rdquo;)
+  title(main=paste(s,&ldquo;12-month percent change in house prices&rdquo;),
+        sub=&ldquo;@lenkiefer Source: Freddie Mac House Price Index (NSA)\n12-month percent change in house prices&rdquo;, adj=0)
+}
+par(cex.main = 1, mar = c(3, 3, 3, 3) + 0.1,
+    mgp = c(3.5, 1, 0), cex.lab = 0.75,
+    font.lab = 2, cex.axis = 0.75, bty = &ldquo;n&rdquo;, las = 1)
+par(mfrow=c(3,2),oma=c(0,0,2,0))
+myplot3(s=&ldquo;CA&rdquo;)
+myplot3(s=&ldquo;NY&rdquo;)
+myplot3(s=&ldquo;FL&rdquo;)
+myplot3(s=&ldquo;TX&rdquo;)
+myplot3(s=&ldquo;OH&rdquo;)
+myplot3(s=&ldquo;WA&rdquo;)
+title(&ldquo;State house price trends\n@lenkiefer Source: Freddie Mac House Price Index&rdquo;,
+      cex=3,outer=T)
+{% endhighlight %}</p>
+
+<p><img src="/img/Rfig/08-29-2017-simple-5-1.svg" alt="plot of chunk 08-29-2017-simple-5" /></p>
+
+<h1 id="low-key-dataviz">Low-key dataviz</h1>
+
+<p>It turns out creating these visualizations wasn&rsquo;t as low-key as I originally thought. I had forgotten most of my base R graphing syntax so I had to look it back up. Fortunately the documentation is pretty good and I could remember the basics pretty quickly (<a href="http://www.statmethods.net/index.html">Quick R</a> was helpful here).</p>
+
+<p>At this point, I find a lot of graphical tasks much easier with ggplot2 compared with base R, so I&rsquo;ll probably stick with ggplot2 for most things I want to do. Still, I like the component wise build that you have to do with using base R.  It forces you to think carefully about the visualization you want to build.</p>
+
+<p>Jon Schwabish (on <a href="https://twitter.com/jschwabish">Twitter</a> and  <a href="https://policyviz.com/about/">PolicyViz</a> blog) gave a talk at the NBER summer institute <a href="https://vimeo.com/230757062">link to Video</a> describing ways to better communicate data. He had a lot of useful things to say, but one thing I particularly liked that he said was &ldquo;when you make your visualization start with gray&rdquo;. He was talking about colors, but it applies even more generally.</p>
+
+<p>Starting with a blank visualization and adding one element at a time, like you do with base R graphics, forces you to think carefully about what you are adding.</p>
+
+<p>I often think about the early pioneers of data visualization. In the old days, creating charts and graphs was incredibly difficult. Despite the costs, there are some incredible early data visualizations. See for example <a href="https://archive.org/details/graphicpresentat00brinrich">Graphic Presentation</a> from 1939. Sometimes forcing simplicity or constraints on yourself <a href="https://hbr.org/2013/01/how-intelligent-constraints-dr">can help drive</a> creativity.</p>
+
+<p>Also see Nathan Yau (on <a href="https://twitter.com/flowingdata">Twitter</a>) at Flowing Data (<a href="http://flowingdata.com/">blog</a>) with an extensive <a href="https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/">comparison of base R to ggplot2</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Low-key%20dataviz&url=%2fcontent%2fpost%2f2017-08-29-low-key%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fcontent%2fpost%2f2017-08-29-low-key%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2fcontent%2fpost%2f2017-08-29-low-key%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Low-key%20dataviz&url=%2fcontent%2fpost%2f2017-08-29-low-key%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Len Kiefer" href="/">Len Kiefer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2017 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

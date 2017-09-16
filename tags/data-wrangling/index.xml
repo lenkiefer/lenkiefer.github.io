@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Wrangling on Len Kiefer</title>
+    <link>http://lenkiefer.com/tags/data-wrangling/</link>
+    <description>Recent content in Data Wrangling on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Mon, 07 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/tags/data-wrangling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plotting recent house price trends with R</title>
+      <link>http://lenkiefer.com/2017/08/07/house-price-trends/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/07/house-price-trends/</guid>
+      <description>IT IS TIME FOR AN UPDATE ON HOUSE PRICE TRENDS AROUND THE UNITED STATES.
+I have been experimenting with some new visualizations and updating some old favorites. Let’s collect them here.
+This post will be an extension of my Visual Meditations on House Prices series from last year. Check out those posts for additional visualizations.
+DataWe’ll use the recently updated Freddie Mac House Price Index (link to source) data and use R to create some plots.</description>
+    </item>
+    
+    <item>
+      <title>Gather round and spread the word: Wrangling global house price data</title>
+      <link>http://lenkiefer.com/2017/04/20/global-hpi-readxl/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/20/global-hpi-readxl/</guid>
+      <description>IN THIS POST I WANT TO SHARE SOME R data wrangling strategy and use it to prepare an update to some global house price plots I shared last year.
+In last year’s post I did some data manipulation by hand and mouse in Excel before getting into R. In this post I’m going to use the newly updated readxl library to do the data manipulations entirely in R. If you follow along, then you should be able to use this code to recreate my graphs.</description>
+    </item>
+    
+    <item>
+      <title>Plotting house price trends with FRED and R</title>
+      <link>http://lenkiefer.com/2017/04/11/fred-plot/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/11/fred-plot/</guid>
+      <description>IN THIS POST I AM going to share some useful code to create some custom plots using the St Louis Federal Reserve Economic Database (FRED). While the FRED page has some nice chart customization options, I’m going to import the data into R with the quantmod package and draw the plots.
+I find myself doing these types of things often enough that I thought you might find these bits o’ code useful.</description>
+    </item>
+    
+    <item>
+      <title>Distribution of mortgage loan amounts in 2015</title>
+      <link>http://lenkiefer.com/2016/10/11/hmda-viz1/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/10/11/hmda-viz1/</guid>
+      <description>IN THIS POST I WANT TO CREATE some data visualizations with R using the recently released Home Mortgage Disclosure Act (HMDA) data.
+For this post I&amp;rsquo;m going to return to the 2015 HMDA that you can get from the Consumer Financial Protection Bureau (CFPB) webpage and I discussed earlier.
+Check out my prior post for more discussion of how we build these data visualizations.
+R code for graphs posted below</description>
+    </item>
+    
+    <item>
+      <title>Industry-specific Beveridge Curves</title>
+      <link>http://lenkiefer.com/2016/09/14/bev-curves/</link>
+      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/14/bev-curves/</guid>
+      <description>IN MY PREVIOUS POST we looked at the Job Openings and Labor Turnover Survey (JOLTS) data and plotted a Beveridge Curve. In this post I want to add some more code that allows us to plot Beveridge Curves by industry.
+For more on the analysis of industry-specific Beveridge Curves, see this paper published in the June 2012 Monthly Labor Review that decomposes shifts in the Beveridge Curve and looks at it by industry.</description>
+    </item>
+    
+    <item>
+      <title>JOLTS! Job openings and labor turnover trends</title>
+      <link>http://lenkiefer.com/2016/09/10/job-openings-and-hires/</link>
+      <pubDate>Sat, 10 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/10/job-openings-and-hires/</guid>
+      <description>IN THIS POST WE&amp;rsquo;LL LOOK AT recent job openings and hires data from the Bureau of Labor Statistics Job Openings and Labor Turnover Survey (JOLTS).
+R code for selected graphs posted below
+Job openings and labor turnover Total nonfarm trends Let&amp;rsquo;s start by looking at aggregate national trends for total nonfarm sector. The plot below compares hires, job openings and separations (the sum of quits, layoffs and discharges, and other separations) over time.</description>
+    </item>
+    
+    <item>
+      <title>What we spend: Consumer Expenditures in 2015</title>
+      <link>http://lenkiefer.com/2016/09/02/consumer-spend/</link>
+      <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/02/consumer-spend/</guid>
+      <description>.showopt { background-color: #004c93; color: #FFFFFF; width: 100px; height: 20px; text-align: center; vertical-align: middle !important; float: right; font-family: sans-serif; border-radius: 8px; } .showopt:hover { background-color: #dfe4f2; color: #004c93; } pre.plot { background-color: white !important; }   EARLIER THIS WEEK THE U.S. BUREAU OF LABOR STATISTICS released data on consumer expenditures in 2015. In this post I want to examine these data and make a few visualizations. R code for graphs posted below</description>
+    </item>
+    
+    <item>
+      <title>Data swarms: Your firearms are useless against them!</title>
+      <link>http://lenkiefer.com/2016/08/18/data-swarm/</link>
+      <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/18/data-swarm/</guid>
+      <description>AUGUST IS ALMOST OVER, and it&amp;rsquo;s nearly back to school season. And that means one thing. No, not that we&amp;rsquo;re about to get a chance to watch the #1 NCAA football program of all time dominate the gridiron (though that&amp;rsquo;s awesome too). No, it&amp;rsquo;s data release season! A data swarm is on its way.
+From American Community Survey to the American Housing Survey to the annual Home Mortgage Disclosure Act Data many statistical data releases come out in September and October.</description>
+    </item>
+    
+    <item>
+      <title>Consumer Credit Trends</title>
+      <link>http://lenkiefer.com/2016/08/09/trends-in-credit/</link>
+      <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/09/trends-in-credit/</guid>
+      <description>TODAY the NEW YORK FEDERAL RESERVE BANK released its Quarterly Report on Household Debt and Credit. These data come from the Center for Microeconomic Data based on credit records from Equifax.
+R code for the graphs are posted at bottom of page
+Trends in household debt balances One of the key statistics tracked in the report (full data can be found here) is household debt balances. They break debt balances out by loan type:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Let&#39;s fix a dot plot &middot; Len Kiefer</title>
+        <meta name="description" content="IN THIS POST WE’RE GOING TO REVISE the dotplot code I posted that lets you take the Federal Open Market Commitee (FOMC) projections and turn them into an animated dotplot.
+The problem is that the code I posted was for projections through June 2016 that only provided annual projections for 2016, 2017, and 2018, but the FOMC added 2019 in their September and December 2016 projections.
+My original code was hard coded to only handle projections for 3 years and longer-run and now a 4th year was added.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'XXX', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Len Kiefer" href="/">Len Kiefer</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/lenkiefer">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/leonard-kiefer-51175331">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:lenkiefer@hotmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Topics" href="/tag/">Topics</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Contact" href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Let&#39;s fix a dot plot</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2016-12-14" itemprop="datePublished">Wed, Dec 14, 2016</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Len Kiefer</a>
+            </span>
+        </span>
+    </p>                 
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>IN THIS POST WE’RE GOING TO REVISE the dotplot code I <a href="../2016-06-22-Make-a-dotplot">posted</a> that lets you take the Federal Open Market Commitee (FOMC) <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">projections</a> and turn them into an animated dotplot.</p>
+<p>The problem is that the code I posted was for projections through June 2016 that only provided annual projections for 2016, 2017, and 2018, but the FOMC added 2019 in their September and December 2016 projections.</p>
+<p>My original code was hard coded to only handle projections for 3 years and longer-run and now a 4th year was added. Of course, everything broke.</p>
+<div id="the-fix" class="section level3">
+<h3>The fix</h3>
+<p>In the original code I relied on the fact that the input data, projections from a quarter, would have the same number of rows. But adding in 2019 results in additional rows for the extra year. For an individual plot this wouldn’t be a problem, but it creates an issue for <a href="https://cran.r-project.org/web/packages/tweenr/index.html">tweenr</a> because it requires the same number of rows in each data set we’re interpolating.</p>
+<p>The simple fix I came up with is to pad the datasets for March and June 2016 to account for the missing 2019 projections. I set it up so the dots fly “down” (as opposed to up which I reserved for the <a href="http://www.bloomberg.com/news/articles/2016-06-17/st-louis-fed-s-bullard-claims-the-dot-missing-from-fed-estimate">St Louis Fed president</a>).</p>
+<p>First, as before we’ll load the data which I’ve stored in individual text files described in my <a href="../2016-06-22-Make-a-dotplot">earlier post</a>.</p>
+<pre class="r"><code># data are stored in text files see http://lenkiefer.com/2016/06/22/Make-a-dotplot for details
+# one file for each projection (March, June, September, and December)
+d3&lt;-fread(&quot;mar2016.txt&quot;)
+ylist&lt;-unique(d3$y)
+df&lt;-data.frame(rate=numeric(),x=numeric())
+for (yy in 1:length(ylist)){
+  for (i in 1:length(d3[y==ylist[yy]]$x) ){
+    for (j in 1:d3[y==ylist[yy] ]$count[i])
+    {if (d3[y==ylist[yy]]$count[i]&gt;0){
+      myc&lt;-j
+      df1&lt;-data.frame(rate=d3[y==ylist[yy]]$x[i],x=ifelse(d3[y==ylist[yy]]$count[i] %% 2 ==1, 
+                                                          ifelse(myc %% 2 ==1,yy+(-1)^myc * (myc-1)*0.04,yy+(-1)^myc * (myc)*0.04),
+                                                          yy-.02+(-1)^myc * (myc)*0.04)   )
+      df&lt;-rbind(df,df1)
+    }}}}
+
+df3&lt;-df
+
+d6&lt;-fread(&quot;jun2016.txt&quot;)
+xlist&lt;-unique(d6$x)
+df&lt;-data.frame(rate=numeric(),x=numeric())
+for (yy in 1:length(xlist)){
+  for (i in 1:length(d6[x==xlist[yy]]$rate) ){
+    for (j in 1:d6[x==xlist[yy] ]$count[i])
+    {if (d6[x==xlist[yy]]$count[i]&gt;0){
+      myc&lt;-j
+      df1&lt;-data.frame(rate=d6[x==xlist[yy]]$rate[i],x=ifelse(d6[x==xlist[yy]]$count[i] %% 2 ==1, 
+                                                          ifelse(myc %% 2 ==1,yy+(-1)^myc * (myc-1)*0.04,yy+(-1)^myc * (myc)*0.04),
+                                                          yy-.02+(-1)^myc * (myc)*0.04)   )
+      df&lt;-rbind(df,df1)
+}}}}
+
+df6&lt;-df
+df6&lt;-rbind(df6,data.frame(rate=8,x=4))  #let missing dot fly away
+
+d9&lt;-fread(&quot;sep2016.txt&quot;)
+ylist&lt;-unique(d9$y)
+df&lt;-data.frame(rate=numeric(),x=numeric())
+for (yy in 1:length(ylist)){
+  for (i in 1:length(d9[y==ylist[yy]]$x) ){
+    for (j in 1:d9[y==ylist[yy] ]$count[i])
+    {if (d9[y==ylist[yy]]$count[i]&gt;0){
+      myc&lt;-j
+      df1&lt;-data.frame(rate=d9[y==ylist[yy]]$x[i],x=ifelse(d9[y==ylist[yy]]$count[i] %% 2 ==1, 
+                                                          ifelse(myc %% 2 ==1,yy+(-1)^myc * (myc-1)*0.04,yy+(-1)^myc * (myc)*0.04),
+                                                          yy-.02+(-1)^myc * (myc)*0.04)   )
+      df&lt;-rbind(df,df1)
+    }}}}
+
+df9&lt;-df
+df9&lt;-rbind(df9,data.frame(rate=8,x=4))
+
+
+d12&lt;-fread(&quot;dec2016.txt&quot;)
+ylist&lt;-unique(d12$y)
+df&lt;-data.frame(rate=numeric(),x=numeric())
+for (yy in 1:length(ylist)){
+  for (i in 1:length(d12[y==ylist[yy]]$x) ){
+    for (j in 1:d12[y==ylist[yy] ]$count[i])
+    {if (d12[y==ylist[yy]]$count[i]&gt;0){
+      myc&lt;-j
+      df1&lt;-data.frame(rate=d12[y==ylist[yy]]$x[i],x=ifelse(d12[y==ylist[yy]]$count[i] %% 2 ==1, 
+                                                          ifelse(myc %% 2 ==1,yy+(-1)^myc * (myc-1)*0.04,yy+(-1)^myc * (myc)*0.04),
+                                                          yy-.02+(-1)^myc * (myc)*0.04)   )
+      df&lt;-rbind(df,df1)
+    }}}}
+
+df12&lt;-df
+df12&lt;-rbind(df12,data.frame(rate=8,x=4))</code></pre>
+<p>Now that we have the data we can pad the extra rows we need for March (df3) and June (df6).</p>
+<pre class="r"><code># number of rows to pad
+n.pad&lt;-nrow(df9)-nrow(df3)
+
+# pad the data 
+df.pad&lt;-data.frame(x=rep(3,n.pad),rate=rep(-5,n.pad))
+df3&lt;-rbind(df3,df.pad)
+df6&lt;-rbind(df6,df.pad)
+
+# add date labels
+df3$date&lt;-factor(&quot;March 2016&quot;) 
+df6$date&lt;-factor(&quot;June 2016&quot;)  
+df9$date&lt;-factor(&quot;September 2016&quot;)
+df12$date&lt;-factor(&quot;December 2016&quot;)
+
+# overwrite values to move the &quot;longer run&quot; dots from March and June
+# over to where the longer run dots are in September and December
+
+df3&lt;-data.table(df3)[x&gt;3.5,x:=x+1]  
+df6&lt;-data.table(df6)[x&gt;3.5,x:=x+1]
+
+#convert to data frames
+df3&lt;-data.frame(df3)
+df6&lt;-data.frame(df6)
+
+#now we can tween data
+tf &lt;- tween_states(list(df12,df3,df6,df9,df12), tweenlength= 3, statelength=1, ease=rep(&#39;cubic-in-out&#39;,2),nframes=60)
+tf&lt;-data.table(tf)</code></pre>
+<p>Now, equipped with this solution we can construct our plot:</p>
+<pre class="r"><code>saveGIF({for (i in 1:max(tf$.frame)) {
+  g&lt;- 
+    ggplot(data=tf[.frame==i],aes(x=x,y=rate,color=date,fill=date))+
+    theme_minimal()+scale_x_continuous(breaks=seq(1,5,1),labels=c(&quot;2016&quot;,&quot;2017&quot;,&quot;2018&quot;,&quot;2019&quot;,&quot;Longer Run&quot;))+
+    geom_point(shape=21,aes(color=date),alpha=0.82,size=3)+
+    scale_y_continuous(limits=c(0,4.5))+
+    scale_color_manual(limits=c(&quot;March 2016&quot;,&quot;June 2016&quot;,&quot;September 2016&quot;,&quot;December 2016&quot;),values=c(viridis(10)[2],viridis(10)[4],viridis(10)[6],viridis(10)[8]))+
+    scale_fill_manual(limits=c(&quot;March 2016&quot;,&quot;June 2016&quot;,&quot;September 2016&quot;,&quot;December 2016&quot;),values=c(viridis(10)[2],viridis(10)[4],viridis(10)[6],viridis(10)[8]))+
+    
+     labs(y=&quot;Midpoint of target range or target level for the federal funds rate (%)&quot;,x=&quot;Horizon&quot;,
+         subtitle=tf[.frame==i &amp; rate&gt;0]$date,
+         title=&quot;FOMC participants&#39; assessments of appropriate monetary policy:\nMidpoint of target range or target level for the federal funds rate&quot;,
+         caption=label_wrap_gen(100)(caption))+
+    theme(plot.title=element_text(size=14))+theme(plot.caption=element_text(hjust=0,vjust=1,margin=margin(t=10)))+
+    theme(plot.margin=unit(c(0.25,0.25,0.25,0.25),&quot;cm&quot;))+  theme(legend.justification=c(0,0), legend.position=&quot;none&quot;)
+  print(g)
+  ani.pause()
+  print(i)
+}
+},movie.name=&quot;fed_dots_2016 dec 14 2016 v2.gif&quot;,ani.width = 575, ani.height = 450)</code></pre>
+<p>Giving us:</p>
+<p><img src="{{ site.url }}/img/charts_dec_14_2016/fed_dots_2016 dec 14 2016 v2.gif" alt="dot v2"/></p>
+<p>Alternatively, we could have just dropped 2019 from the graph and things would have been easier:</p>
+<p><img src="{{ site.url }}/img/charts_dec_14_2016/fed_dots_2016 dec 14 2016.gif" alt="dot v2"/></p>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Let%27s%20fix%20a%20dot%20plot&url=%2f2016%2f12%2f14%2f2016-12-14-fix-a-dotplot%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2016%2f12%2f14%2f2016-12-14-fix-a-dotplot%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2016%2f12%2f14%2f2016-12-14-fix-a-dotplot%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Let%27s%20fix%20a%20dot%20plot&url=%2f2016%2f12%2f14%2f2016-12-14-fix-a-dotplot%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Len Kiefer" href="/">Len Kiefer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; Len Kiefer 2017 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright" style="font-size:50%;">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

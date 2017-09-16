@@ -1,0 +1,10 @@
+# Ignore all files in this directory
+# Except this file
+!.gitignore
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+#public
+blogdown

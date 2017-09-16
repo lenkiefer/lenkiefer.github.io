@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Len Kiefer</title>
+    <link>http://lenkiefer.com/categories/</link>
+    <description>Recent content in Categories on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    
+	<atom:link href="http://lenkiefer.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dataviz</title>
+      <link>http://lenkiefer.com/categories/dataviz/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/dataviz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Economics</title>
+      <link>http://lenkiefer.com/categories/economics/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/economics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Economy</title>
+      <link>http://lenkiefer.com/categories/economy/</link>
+      <pubDate>Wed, 04 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/economy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>House Prices</title>
+      <link>http://lenkiefer.com/categories/house-prices/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/house-prices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Housing</title>
+      <link>http://lenkiefer.com/categories/housing/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/housing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>http://lenkiefer.com/categories/meta/</link>
+      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Presentation</title>
+      <link>http://lenkiefer.com/categories/presentation/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/presentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>http://lenkiefer.com/categories/r/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tableau</title>
+      <link>http://lenkiefer.com/categories/tableau/</link>
+      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/tableau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visual Meditation</title>
+      <link>http://lenkiefer.com/categories/visual-meditation/</link>
+      <pubDate>Sun, 08 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/categories/visual-meditation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

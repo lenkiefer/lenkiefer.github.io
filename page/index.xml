@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Len Kiefer</title>
+    <link>http://lenkiefer.com/page/</link>
+    <description>Recent content in Pages on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    
+	<atom:link href="http://lenkiefer.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://lenkiefer.com/page/dec2016/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/page/dec2016/</guid>
+      <description>A look back at housing’s best year in a decadecode{white-space: pre;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}A look back at housing’s best year in a decadeThe year of 2016 in housing datavizLen Kiefer2016-12-31Be sure to follow me on Twitter @lenkiefer and read my blog at lenkiefer.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://lenkiefer.com/page/may2016/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/page/may2016/</guid>
+      <description>Housing’s best year in a decadecode{white-space: pre;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}Housing’s best year in a decadeHousing and mortgage market updateLen Kiefer2016-05-01IntroductionA combination of low mortgage rates and robust job growth should help to propel housing markets in 2016. Despite weak overall economic growth, the prospects for housing remain bright.</description>
+    </item>
+    
+    <item>
+      <title>Leonard Kiefer, Ph.D.</title>
+      <link>http://lenkiefer.com/page/content/page/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/page/content/page/resume/</guid>
+      <description>PDF version Economist 124 South Spring Street, Falls Church, VA 22046 • (614) 209-1550 • lenkiefer@hotmail.com
+Summary I help people understand the economy, housing and mortgage markets with expert analysis.
+Skills Economics/Statistics Extensive experience working with large data, e.g. HMDA, Loan Level Mortgage Performance Data (millions of records over many years), public government data (ACS, AHS), and forecasting databases.
+Deep knowledge of advanced forecasting techniques and industry models (e.g. Macroadvisers’ MA/US model).</description>
+    </item>
+    
+  </channel>
+</rss>

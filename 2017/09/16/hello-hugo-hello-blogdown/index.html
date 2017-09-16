@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hello Hugo! Hello Blogdown! &middot; Len Kiefer</title>
+        <meta name="description" content="ALL RIGHT! LOOKS LIKE WE’RE BACK ONLINE.
+I took the opportunity to try out the newly released blogdown R package and migrate my blog over from Jekyll to Hugo.
+This blog has been up for just over two years and Jekyll was working fine, but I never felt really comfortable. I’m guessing that the Blogdown package will become enormously popular and it seems that Hugo has more flexibility for me. Also, Blogdown and Rstudio integrate better with Hugo than Jekyll.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="http://lenkiefer.com/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66905937-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="Len Kiefer" href="http://lenkiefer.com/">Len Kiefer</a>
+                            </h1>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/lenkiefer">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/leonard-kiefer-51175331">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:lenkiefer@hotmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Topics" href="/tag/">Topics</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="/project/">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/content/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Hello Hugo! Hello Blogdown!</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2017-09-16" itemprop="datePublished">Sat, Sep 16, 2017</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="https://google.com/&#43;XXX" itemprop="url" rel="author">Len Kiefer</a>
+            </span>
+        </span>
+    </p>                 
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>ALL RIGHT! LOOKS LIKE WE’RE BACK ONLINE.</p>
+<p>I took the opportunity to try out the <a href="https://blog.rstudio.com/2017/09/11/announcing-blogdown/">newly released</a> <a href="https://github.com/rstudio/blogdown">blogdown</a> <a href="https://www.r-project.org/">R</a> package and migrate my blog over from <a href="https://jekyllrb.com/">Jekyll</a> to <a href="https://gohugo.io/">Hugo</a>.</p>
+<p>This blog has been up for just over two years and Jekyll was working fine, but I never felt really comfortable. I’m guessing that the Blogdown package will become enormously popular and it seems that Hugo has more flexibility for me. Also, Blogdown and <a href="https://www.rstudio.com/products/rstudio/">Rstudio</a> integrate better with Hugo than Jekyll.</p>
+<div id="and-we-got-a-fancy-new-theme" class="section level1">
+<h1>And we got a fancy new theme</h1>
+<p>By far the best part of migrating was picking out a fancy new theme for this space. There’s quite a lot of different <a href="https://themes.gohugo.io/">themes available</a> for Hugo, though not all of them play nice with Blogdown.</p>
+<p>After trying several out, I decided that <a href="https://themes.gohugo.io/ghostwriter/">Ghostwriter</a> would be a nice simple theme for this space. It’s pretty close to my old theme, especially after I tweaked it.</p>
+<p>In addition to shifting the main color from red to royal blue, I also took the opportunity to make <a href="https://www.wired.com/2016/10/how-the-web-became-unreadable/">the page more readable</a> by changing the font from gray to black. I just had to dig into the Ghostwriter .css file and switch out the colors (in several places).</p>
+</div>
+<div id="migration" class="section level1">
+<h1>Migration</h1>
+<p>Migration wasn’t too hard. My original site wasn’t too complicated, though I did have a lot of images. The biggest challenge was broken links and redirecting image sources. Fortunately, I picked up some regular expressions and code snippets from the <a href="https://bookdown.org/yihui/blogdown/">Blogdown book</a> that made it easy. I also decided to add tags and categories to my posts which is hard to do ex post and consumed a fair amount of time.</p>
+<p>Also, getting the links and images to work took some time. Gave me the motivation to learn some regular expressions. Here’s a flavor of what I had to do.</p>
+<div id="fixing-links-with-regular-expressions" class="section level2">
+<h2>Fixing links with regular expressions</h2>
+<p>My markdown code under Jekyll referenced links in the following manner:</p>
+<p><code>[awesome link]({% post_url 2017-08-07-house-price-trends %})</code></p>
+<p>which would become</p>
+<p><code>&lt;a href=&quot;/2017/08/07/house-price-trends&quot;&gt;</code></p>
+<p>when Jekyll built my site.</p>
+<p>In order to get the links to work for Blogdown and Hugo (assuming I got the Post URLs to remain the same) I needed the markdown to look like:</p>
+<p><code>[awesome link](../../../../2017/08/07/house-price-trends )</code></p>
+<p>The <code>../</code> business probably isn’t necessary but it worked. You see under my new setup posts are stored under <code>lenkiefer.com/YYYY/MM/DD/slug</code> where <code>YYYY</code> is year, <code>MM</code> is month, <code>DD</code> is date and <code>slug</code> is the post slug (which I based on the original markdown file names).</p>
+<p>In order to get this to work I modified a bit of code from the super-helpful <a href="https://bookdown.org/yihui/blogdown/">Blogdown book</a>. I created it piecemeal through trial and error so it probably could be condensed. But here’s what I had:</p>
+<pre class="r"><code>################################################################################
+## Get a list of markdown files (or sub in Rmd for Rmarkdown files) ##
+################################################################################
+
+files = list.files(
+  &#39;content/&#39;, &#39;[.](md)$&#39;, full.names = TRUE,
+  recursive = TRUE
+)
+
+
+################################################################################
+## Drop post &quot;{% post_url &quot;##
+################################################################################
+
+for( f in files ){
+  x &lt;- readLines(f)
+  y &lt;- gsub( &#39;\\{% post_url &#39;, &quot;../&quot;, x )
+  cat(y, file=f, sep=&quot;\n&quot;)  }
+
+################################################################################
+## Drop &quot;%}&quot;&quot; ##
+################################################################################
+
+for( f in files ){
+  x &lt;- readLines(f)
+  y &lt;- gsub( &quot;\\%}&quot;, &quot;&quot;, x )
+  cat(y, file=f, sep=&quot;\n&quot;) }
+
+################################################################################
+## Replace  &quot;YYYY-MM-DD-&quot; with &quot;../../../../YYYY/MM/DD/&quot;&quot;
+## e.g. :&quot;2017-08-07-&quot; with ../../../../2017/08/07/
+################################################################################
+
+for( f in files ){
+  x &lt;- readLines(f)
+  y &lt;- gsub( &#39;(..\\/)(\\d{4})(-)(\\d{2})(-)(\\d{2})(-)&#39;, 
+             &#39;..\\/..\\/..\\/..\\/\\2\\/\\4\\/\\6\\/&#39;, x )
+  cat(y, file=f, sep=&quot;\n&quot;) }</code></pre>
+<p>Not the most elegant solution, but running this code over both markdown and Rmarkdown files got my links to work. I also needed to do something similar to get image sources (like my many gifs) to work.</p>
+<div id="images" class="section level3">
+<h3>images</h3>
+<p>I also needed to do something similar to get image sources (like my many gifs) to work. For my setup I needed to replace <code>{{site.url}}</code> with <code>../../../..</code>. This little bit handled it.</p>
+<pre class="r"><code>################################################################################
+## {{ site.url}} with &quot;../../../..&quot;
+################################################################################
+
+for( f in files ){
+  x &lt;- readLines(f)
+  y &lt;- gsub( &#39;\\{\\{ site.url\\}\\}&#39;, &quot;../../../..&quot;, x )
+  cat(y, file=f, sep=&quot;\n&quot;)}</code></pre>
+<p>Then I copied over my image files from the Jekyll blog and stored them in the <code>\static\img</code> folder in my new Hugo blog.</p>
+</div>
+</div>
+<div id="recompile-and-go" class="section level2">
+<h2>Recompile and go</h2>
+<p>The last thing was to re-run my Rmarkdown code and rebuild the site. The Rmarkdown code mostly ran well, but I had to go back and reload some libraries I hadn’t reinstalled when updated R.</p>
+<p>The final step was to all the stuff in my new blog and save it under my old blog directory (after I archived the old blog). Then I was good to go and here we are.</p>
+<p>Be sure to check out my new <a href="../../../../tag/">post tags</a> which should help you find posts based on topic. I’ve also added a <a href="../../../../project/">projects</a> page that I’ll be adding longer pieces to from time to time.</p>
+</div>
+</div>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+        <p class="post-tags">
+            <span>Tagged:</span>
+            
+            
+                <a href="/tags/meta/">meta</a>, 
+            
+                <a href="/tags/personal/">personal</a>
+            
+        </p>
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Hello%20Hugo%21%20Hello%20Blogdown%21 via %40lenkiefer&url=http%3a%2f%2flenkiefer.com%2f2017%2f09%2f16%2fhello-hugo-hello-blogdown%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flenkiefer.com%2f2017%2f09%2f16%2fhello-hugo-hello-blogdown%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=http%3a%2f%2flenkiefer.com%2f2017%2f09%2f16%2fhello-hugo-hello-blogdown%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+            <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Hello%20Hugo%21%20Hello%20Blogdown%21&url=http%3a%2f%2flenkiefer.com%2f2017%2f09%2f16%2fhello-hugo-hello-blogdown%2f&summary="
+               onclick="window.open(this.href, 'linkedin-share', 'width=554,height=481');return false;">
+               <i class="fa fa-linkedin"></i>
+               <span class="hidden">LinkedIn</span>
+            </a>
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="Len Kiefer" href="http://lenkiefer.com/">Len Kiefer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; Len Kiefer 2017 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright" style="font-size:50%;">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a> (modified by Len Kiefer)</span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://lenkiefer.com/js/jquery-1.11.3.min.js"></script>
+        <script src="http://lenkiefer.com/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="http://lenkiefer.com/js/scripts.js"></script>
+    </body>
+</html>
+

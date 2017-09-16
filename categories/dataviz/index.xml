@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dataviz on Len Kiefer</title>
+    <link>http://lenkiefer.com/categories/dataviz/</link>
+    <description>Recent content in Dataviz on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/categories/dataviz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Low-key dataviz</title>
+      <link>http://lenkiefer.com/2017/08/29/low-key/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/29/low-key/</guid>
+      <description>IN THIS POST I WANT TO REWORK SOME VISUALIZATIONS we’ve already made.
+Inspired by this compendium of clean graphics in R, I want to remake some of visualizations we made earlier this year in a low-key manner.
+Sometimes the visualizations we make here can be pretty intense. Sometimes they are quite intricate, or use animation, or have a lot going on with them. But sometimes you need a simple, low-key visualization to make your point.</description>
+    </item>
+    
+    <item>
+      <title>Forecasting is hard (work)-bonus charts</title>
+      <link>http://lenkiefer.com/2017/08/27/forecast2-gifs/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/27/forecast2-gifs/</guid>
+      <description>THIS POST IS A QUICK FOLLOW UP to my previous post on forecasting.
+I’m not going to add any R code or commentary on graphics, instead I’m just going to leave a few extra graphs related to the prior post. Check out the earlier post for more details on the data and how to build the charts.
+Static plotsHere are some static images:
+GifsAnd here are associated animated gifs:</description>
+    </item>
+    
+    <item>
+      <title>Adding an animation progress bar</title>
+      <link>http://lenkiefer.com/2017/08/10/animation-progress/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/10/animation-progress/</guid>
+      <description>I LIKE TO MAKE ANIMATED GIFS with my data. But frankly, sometimes they can be confusing. I got a good suggestion via twitter in response to a gif I shared there:
+This is very cool. Has anyone added a visual “progress bar” to a gganimate loop to show the frame visually? It&#39;s hard to grasp time as text.— Jonathan Spring (@JustTheSpring) August 6, 2017Now it’s very likely that others have tried this, but I haven’t seen it.</description>
+    </item>
+    
+    <item>
+      <title>Joyswarm: Joyplot &#43; beeswarm = awesome</title>
+      <link>http://lenkiefer.com/2017/08/03/joyswarm/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/03/joyswarm/</guid>
+      <description>I LOOK AT A LOT OF DATA and the thing about data is it’s not always what it seems to be. A lot of data are uncertain, and based on estimates.
+We’ve talked about this before. See for example, this post on visualizing uncertainty in housing data. In this post I’m going to combine one of my favorite new plot types, the joyplot (see this post) with another of my favorite plot types: the beeswarm plot (see this post for more on beeswarm plots).</description>
+    </item>
+    
+    <item>
+      <title>Mortgage Rate Kandinsky</title>
+      <link>http://lenkiefer.com/2017/07/27/kandinsky/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/07/27/kandinsky/</guid>
+      <description>THINGS ARE ABOUT TO GET A BIT MORE ABSTRACT IN THIS SPACE. Today we make some Kandinsky-style images with R.
+This summer I was fortunate to spend some time at the Pompidou Centre in Paris. The Pompidou Centre houses the largest collection of modern art in Europe. I really enjoyed their collection of abstract and minimalist paintings.
+Well, turns out we can make our own abstract-style art using a Kandinsky R package from Giora Simchoni.</description>
+    </item>
+    
+    <item>
+      <title>Joyful dataviz</title>
+      <link>http://lenkiefer.com/2017/07/26/joy/</link>
+      <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/07/26/joy/</guid>
+      <description>I TOOK SOME TIME OFF OVER THE SUMMER, away from data visualizations. It’s good to get away from time to time, but oh boy did I miss out.
+I wasn’t gone long, but in the short time I was gone people came up with some wonderful things.
+Let me dive back into it with some joyful dataviz.
+Joy plotsClaus Wilke (Twitter) authored a new R package for creating joy plots ( LINK for ggjoy vignette).</description>
+    </item>
+    
+    <item>
+      <title>Animate a bivariate choropleth</title>
+      <link>http://lenkiefer.com/2017/04/25/bivariate-animate/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/25/bivariate-animate/</guid>
+      <description>IN THIS POST I WANT TO EXTEND ON yesterday’s post and build an animated bivariate choropleth.
+We’ll use the same data as yesterday and create a combined scatterplot with bivariate choropleth map and animate it with R.
+Let’s get right to it.
+Load dataWe’ll follow from yesterday and load our data and do some manipulations.
+In order for this to work we’ll need data from three sources:
+House Price Index Data in a .</description>
+    </item>
+    
+    <item>
+      <title>Visual meditations on house prices, Part 6: state recovery</title>
+      <link>http://lenkiefer.com/2016/11/03/2016-11-03-visual-meditations-on-house-prices-part6/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/11/03/2016-11-03-visual-meditations-on-house-prices-part6/</guid>
+      <description>Introduction HOUSE PRICES HAVE NOW RECOVERED BACK TO THEIR PRE-RECESSION PEAK, at least according to some indices. The Freddie Mac House Price Index, for example, surpassed its pre-2008 peak in the latest release for data through September 2016. In this post I&amp;rsquo;ll be exploring trends in house prices and exploring different ways of showing how far house prices have come, and in some cases, how far they still have to go.</description>
+    </item>
+    
+    <item>
+      <title>Recent House Price Trends</title>
+      <link>http://lenkiefer.com/2016/02/28/house-price-trends/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/02/28/house-price-trends/</guid>
+      <description>{% include JB/setup
+National house prices rise 6.2% Freddie Mac released its full year 2015 house price index and an interactive data visualization. The seasonally-adjusted national index increased 6.2 percent year-over-year and is now 29.6 percent above the post-recession low, and just 4.1 percent below the (nominal) pre-recession peak (see graph below).
+While national house price growth has been strong, there is considerable variation across the country. Some states and metro areas are already well above their pre-recession (nominal) peak, while other still have lots of ground to make up.</description>
+    </item>
+    
+    <item>
+      <title>Annotated Data Viz 2</title>
+      <link>http://lenkiefer.com/2015/08/29/annotated-data-viz-2/</link>
+      <pubDate>Sat, 29 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2015/08/29/annotated-data-viz-2/</guid>
+      <description>BELOW IS A VISUALIZATION of household size and composition and homeownership from the Census1 going back to 1980. With this visualization, we can see how household size and tenure choice (own vs rent) has varied by age over time.
+1Data from Ipums: IPUMS-USA, University of Minnesota, www.ipums.org.
+ See my data visualizations on Tableau Public</description>
+    </item>
+    
+    <item>
+      <title>Annotated Data Viz 1</title>
+      <link>http://lenkiefer.com/2015/08/23/annotated-data-viz-1/</link>
+      <pubDate>Sun, 23 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2015/08/23/annotated-data-viz-1/</guid>
+      <description>Homeownership and the Jobs Outlook BELOW IS A VISUALIZATION of job growth and homeownership by occcupation. This viz details expected job growth by occupation compared to homeownership rate by occupation. This viz was originally published on Freddiemac.com. This viz shows compares variation in homeownership rates by occupation with expected job growth for those occupations. The size of the bubbles correspond to the expected number of job openings for that occupation.</description>
+    </item>
+    
+  </channel>
+</rss>

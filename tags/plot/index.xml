@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plot on Len Kiefer</title>
+    <link>/tags/plot/</link>
+    <description>Recent content in Plot on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/plot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Low-key dataviz</title>
+      <link>/2017/08/29/2017-08-29-low-key/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/29/2017-08-29-low-key/</guid>
+      <description>IN THIS POST I WANT TO REWORK SOME VISUALIZATIONS we’ve already made.
+Inspired by this compendium of clean graphics in R, I want to remake some of visualizations we made earlier this year in a low-key manner.
+Sometimes the visualizations we make here can be pretty intense. Sometimes they are quite intricate, or use animation, or have a lot going on with them. But sometimes you need a simple, low-key visualization to make your point.</description>
+    </item>
+    
+  </channel>
+</rss>

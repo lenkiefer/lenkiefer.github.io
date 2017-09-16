@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Meditation on Len Kiefer</title>
+    <link>http://lenkiefer.com/categories/visual-meditation/</link>
+    <description>Recent content in Visual Meditation on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Sun, 08 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/categories/visual-meditation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visual meditations on house prices</title>
+      <link>http://lenkiefer.com/2016/05/08/visual-meditations-on-house-prices/</link>
+      <pubDate>Sun, 08 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/08/visual-meditations-on-house-prices/</guid>
+      <description>IntroductionThis is a multi-part blog series on visual meditations on house prices. You can find the links at:
+Part 1: data wranglingPart 2: sparklines and dots (animated)Part 3: bubbles and bouncePart 4: graph galleryPart 5: distributionsPart 6: state recoveryPart 7: don’t cross the streamsand maybe more as I think of them. I’ll add them all here.
+</description>
+    </item>
+    
+  </channel>
+</rss>

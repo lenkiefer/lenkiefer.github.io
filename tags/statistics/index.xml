@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Len Kiefer</title>
+    <link>http://lenkiefer.com/tags/statistics/</link>
+    <description>Recent content in Statistics on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Sun, 16 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Of kernels and beeswarms: Comparing the distribution of house values to household income</title>
+      <link>http://lenkiefer.com/2017/04/16/house-price-to-income-acs-2015/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/16/house-price-to-income-acs-2015/</guid>
+      <description>BACK IN JANUARY WE LOOKED AT HOUSING microdata from the American Community Survey Public Microdata that we collected from IPUMS. Let’s pick back up and look at these data some more. Glad you could join us.
+Be sure to check out my earlier post for more discussion of the underlying data. Here we’ll pick up where we left off and make some more graphs using R.
+Just a quick reminder (read the earlier post for all the details), we have a dataset that includes household level observations for the 20 largest metro areas in the United States for 2010 and 2015 (latest data available).</description>
+    </item>
+    
+  </channel>
+</rss>

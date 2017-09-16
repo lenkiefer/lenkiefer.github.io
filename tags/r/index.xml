@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Len Kiefer</title>
+    <link>http://lenkiefer.com/tags/r/</link>
+    <description>Recent content in R on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lenkiefer.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Low-key dataviz</title>
+      <link>http://lenkiefer.com/2017/08/29/low-key/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/29/low-key/</guid>
+      <description>IN THIS POST I WANT TO REWORK SOME VISUALIZATIONS we’ve already made.
+Inspired by this compendium of clean graphics in R, I want to remake some of visualizations we made earlier this year in a low-key manner.
+Sometimes the visualizations we make here can be pretty intense. Sometimes they are quite intricate, or use animation, or have a lot going on with them. But sometimes you need a simple, low-key visualization to make your point.</description>
+    </item>
+    
+    <item>
+      <title>Forecasting is hard (work)</title>
+      <link>http://lenkiefer.com/2017/08/27/forecast/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/27/forecast/</guid>
+      <description>IN THIS POST WE WILL STUDY FORECASTS OF US ECONOMIC CONDITIONS.
+Niels Bohr quipped:
+Prediction is very difficult, especially if it’s about the future.
+I’m a macroeconomist by training, and my day job sometimes requires me to forecast the future so I can relate. Predicting the future can be quite difficult.
+In this post, we’ll analyze forecasts of economic conditions from professional forecasters using R to wrangle the data and construct plots.</description>
+    </item>
+    
+    <item>
+      <title>Adding an animation progress bar</title>
+      <link>http://lenkiefer.com/2017/08/10/animation-progress/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/10/animation-progress/</guid>
+      <description>I LIKE TO MAKE ANIMATED GIFS with my data. But frankly, sometimes they can be confusing. I got a good suggestion via twitter in response to a gif I shared there:
+This is very cool. Has anyone added a visual “progress bar” to a gganimate loop to show the frame visually? It&#39;s hard to grasp time as text.— Jonathan Spring (@JustTheSpring) August 6, 2017Now it’s very likely that others have tried this, but I haven’t seen it.</description>
+    </item>
+    
+    <item>
+      <title>Plotting recent house price trends with R</title>
+      <link>http://lenkiefer.com/2017/08/07/house-price-trends/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/07/house-price-trends/</guid>
+      <description>IT IS TIME FOR AN UPDATE ON HOUSE PRICE TRENDS AROUND THE UNITED STATES.
+I have been experimenting with some new visualizations and updating some old favorites. Let’s collect them here.
+This post will be an extension of my Visual Meditations on House Prices series from last year. Check out those posts for additional visualizations.
+DataWe’ll use the recently updated Freddie Mac House Price Index (link to source) data and use R to create some plots.</description>
+    </item>
+    
+    <item>
+      <title>Joyswarm: Joyplot &#43; beeswarm = awesome</title>
+      <link>http://lenkiefer.com/2017/08/03/joyswarm/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/08/03/joyswarm/</guid>
+      <description>I LOOK AT A LOT OF DATA and the thing about data is it’s not always what it seems to be. A lot of data are uncertain, and based on estimates.
+We’ve talked about this before. See for example, this post on visualizing uncertainty in housing data. In this post I’m going to combine one of my favorite new plot types, the joyplot (see this post) with another of my favorite plot types: the beeswarm plot (see this post for more on beeswarm plots).</description>
+    </item>
+    
+    <item>
+      <title>Joyful dataviz</title>
+      <link>http://lenkiefer.com/2017/07/26/joy/</link>
+      <pubDate>Wed, 26 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/07/26/joy/</guid>
+      <description>I TOOK SOME TIME OFF OVER THE SUMMER, away from data visualizations. It’s good to get away from time to time, but oh boy did I miss out.
+I wasn’t gone long, but in the short time I was gone people came up with some wonderful things.
+Let me dive back into it with some joyful dataviz.
+Joy plotsClaus Wilke (Twitter) authored a new R package for creating joy plots ( LINK for ggjoy vignette).</description>
+    </item>
+    
+    <item>
+      <title>More on housing affordability</title>
+      <link>http://lenkiefer.com/2017/06/20/more-afford/</link>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/06/20/more-afford/</guid>
+      <description>LET US FOLLOW UP ON YESTERDAY’S POST with some more analysis of housing affordability.
+Per usual, we’ll use R to generate the plots and I’ll share the code below.
+Measuring affordabilityFirst, let’s talk a little bit more about what we are seeing in the plots. What are we measuring? Affordability metrics are often based on market level summary statistics. In our case we are looking at various ways to measure housing costs at a market level.</description>
+    </item>
+    
+    <item>
+      <title>Housing supply, population, and house prices: The macro view</title>
+      <link>http://lenkiefer.com/2017/05/28/housing-supply-house-prices/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/28/housing-supply-house-prices/</guid>
+      <description>## &amp;#39;getSymbols&amp;#39; currently uses auto.assign=TRUE by default, but will## use auto.assign=FALSE in 0.5-0. You will still be able to use## &amp;#39;loadSymbols&amp;#39; to automatically load data. getOption(&amp;quot;getSymbols.env&amp;quot;)## and getOption(&amp;quot;getSymbols.auto.assign&amp;quot;) will still be checked for## alternate defaults.## ## This message is shown once per session and may be disabled by setting ## options(&amp;quot;getSymbols.warning4.0&amp;quot;=FALSE). See ?getSymbols for details.I travel around the United States giving talks, usually updates on recent trends in housing and mortgage markets.</description>
+    </item>
+    
+    <item>
+      <title>Housing market recap</title>
+      <link>http://lenkiefer.com/2017/05/25/week-in-review/</link>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/25/week-in-review/</guid>
+      <description>QUITE A LOT OF HOUSING DATA CAME OUT THIS WEEK. Let’s recap with some graphs.
+Mortgage rates back below 4 percentThe 30-year fixed rate mortgage fell back below 4 percent this week.
+New home salesNew home sales data was released and came in weaker than expected for April 2017. March has been an extremely strong number, so a decline was anticipated, but the drop was bigger than most expected.</description>
+    </item>
+    
+    <item>
+      <title>Index starting points and dataviz</title>
+      <link>http://lenkiefer.com/2017/05/23/index-start/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/23/index-start/</guid>
+      <description>SO WE HAVE BEEN PLOTTING A LOT OF INDEX VALUES LATELY. It’s been great. But you have questions. Great questions.
+I got an interesting response to my house price dot chart over Twitter regarding the house price index we were plotting. User [@chrisschnabel](https://twitter.com/chrisschnabel) wondered how the choice of starting point influenced how the house price dot chart looked.
+@lenkiefer This is a great viz, but conclusions will be drawn based on the date of the index.</description>
+    </item>
+    
+    <item>
+      <title>Facet my geo!</title>
+      <link>http://lenkiefer.com/2017/05/22/geo-my-facet/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/22/geo-my-facet/</guid>
+      <description>TIME TO TRY OUT ANOTHER HOUSE PRICE VISUALIZATION.
+In this post we’ll try out a new way to visualize recent house price trends with R.
+Just this wekeend I saw a new package geofacet for organizing ggplot2 facets along a geographic grid. It allows use to construct a small multiple graph that roughly looks like the United States. (Thanks to [@yoniceedee](https://twitter.com/yoniceedee) for recommending geofacet).
+Let’s try it out using the same house price data we visualized recently.</description>
+    </item>
+    
+    <item>
+      <title>Consumer prices, household debt</title>
+      <link>http://lenkiefer.com/2017/05/21/consumer-prices-household-debt/</link>
+      <pubDate>Sun, 21 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/21/consumer-prices-household-debt/</guid>
+      <description>LET’S TAKE A LOOK AT RECENT TRENDS IN CONSUMER PRICES AND HOUSEHOLD DEBT. Along the way we’ll refresh some visualizations of consumer prices (see here) and household debt (see here) we made last year, as well as think up some new ones.
+As usual we’ll use R to generate the plots and I’ll share the code below. But before we get into the details of constructing the charts, let’s just look at two plots to help set the stage.</description>
+    </item>
+    
+    <item>
+      <title>House price growth and employment trends</title>
+      <link>http://lenkiefer.com/2017/05/03/house-price-emp-trends/</link>
+      <pubDate>Wed, 03 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/05/03/house-price-emp-trends/</guid>
+      <description>IN THIS POST I WANT TO REVIEW RECENT EMPLOYMENT AND HOUSE PRICE TRENDS at the metropolitan statistical area. No R code here, but you can recreate the graphs we’ll explore today by following the code in this post.
+This week the U.S. Bureau of Labor Statistics (BLS) released updated metro employment data (LINK) and Freddie Mac released its Freddie Mac House Price Index for over 300 metro areas as well as the 50 states, the District of Columbia and the United States.</description>
+    </item>
+    
+    <item>
+      <title>Animate a bivariate choropleth</title>
+      <link>http://lenkiefer.com/2017/04/25/bivariate-animate/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/25/bivariate-animate/</guid>
+      <description>IN THIS POST I WANT TO EXTEND ON yesterday’s post and build an animated bivariate choropleth.
+We’ll use the same data as yesterday and create a combined scatterplot with bivariate choropleth map and animate it with R.
+Let’s get right to it.
+Load dataWe’ll follow from yesterday and load our data and do some manipulations.
+In order for this to work we’ll need data from three sources:
+House Price Index Data in a .</description>
+    </item>
+    
+    <item>
+      <title>Bivariate choropleth maps with R</title>
+      <link>http://lenkiefer.com/2017/04/24/bivariate-map/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/24/bivariate-map/</guid>
+      <description>NOTE: After I posted this (like within 5 minutes) I found this post which also constructs bivariate chropleths in R.
+IN THIS POST I WANT TO REVISIT SOME MAPS I MADE LAST YEAR. At that time, I was using Tableau to create choropleth maps, but in this post I want to reimagine the maps and make them in R.
+Last year in this post we looked at the relationship between population growth and the growth in housing units from 2010 to 2015.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s that on the horizon? An awesome dataviz!</title>
+      <link>http://lenkiefer.com/2017/04/23/horizon/</link>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/23/horizon/</guid>
+      <description>This post is everything you want
+it’s everything you need
+it’s every viz inside of you that you wish you could see
+it’s all the right viz at exactly the right time
+but it means nothing to you and you don’t know why
+LET US MAKE SOME HORIZON CHARTS.
+What is a horizon chart you ask? That’s exactly what I was thinking earlier this weekend. Well, not exactly. I sort of knew what horizon charts were, but I couldn’t say exactly what they were good for.</description>
+    </item>
+    
+    <item>
+      <title>Treemapify those pies!</title>
+      <link>http://lenkiefer.com/2017/04/22/treemapify-those-pies/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/22/treemapify-those-pies/</guid>
+      <description>TIME FOR ANOTHER DATAVIZ REMIX. Saw on Twitter that [@hrbrmstr](https://twitter.com/hrbrmstr) posted a remix of a Wall Street Journal visualization over at rud.is.
+The original WSJ article used pies of various size to compare recent store closings.
+As we usually do in this space, we’ll use R to create our plots.
+Let’s mix things up and go remix the remix.
+PiesBut first let’s consider the original.
+I’m not going to copy the original from the WSJ (click the link above to check out the story), but I am going to make my own pie version.</description>
+    </item>
+    
+    <item>
+      <title>Gather round and spread the word: Wrangling global house price data</title>
+      <link>http://lenkiefer.com/2017/04/20/global-hpi-readxl/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/20/global-hpi-readxl/</guid>
+      <description>IN THIS POST I WANT TO SHARE SOME R data wrangling strategy and use it to prepare an update to some global house price plots I shared last year.
+In last year’s post I did some data manipulation by hand and mouse in Excel before getting into R. In this post I’m going to use the newly updated readxl library to do the data manipulations entirely in R. If you follow along, then you should be able to use this code to recreate my graphs.</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Pixelate America</title>
+      <link>http://lenkiefer.com/2017/04/17/pixel-map/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/17/pixel-map/</guid>
+      <description>LET’S PIXELATE AMERICA. This morning I happened across a fun blog post on how to generate Pixel maps with R via R weekly.
+The basic code is so easy, all you need is ggplot2 (which I get from the tidyverse).
+library(tidyverse)## Loading tidyverse: ggplot2## Loading tidyverse: tibble## Loading tidyverse: tidyr## Loading tidyverse: readr## Loading tidyverse: purrr## Loading tidyverse: dplyr## Conflicts with tidy packages ----------------------------------------------## filter(): dplyr, stats## lag(): dplyr, statsggplot(map_data(&amp;quot;state&amp;quot;), aes(round(long, 0),round(lat,0), group=group, fill = as.</description>
+    </item>
+    
+    <item>
+      <title>Plotting house price trends with FRED and R</title>
+      <link>http://lenkiefer.com/2017/04/11/fred-plot/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/04/11/fred-plot/</guid>
+      <description>IN THIS POST I AM going to share some useful code to create some custom plots using the St Louis Federal Reserve Economic Database (FRED). While the FRED page has some nice chart customization options, I’m going to import the data into R with the quantmod package and draw the plots.
+I find myself doing these types of things often enough that I thought you might find these bits o’ code useful.</description>
+    </item>
+    
+    <item>
+      <title>A grand tour of house price trends</title>
+      <link>http://lenkiefer.com/2017/02/20/house-price-tour/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/20/house-price-tour/</guid>
+      <description>LET US BUILD ON YESTERDAY’S POST (LINK) and construct more VISUALIZATIONS of house prices. In this post, I’ll include some R code so you can play along.
+We are going to construct our own GRAND TOUR (Wikipedia) except instead of touring European antiquity, we will explore recent trends in house prices around the continental United States. But we will perhaps still pick up some culture, or at least a new ggplot2 theme.</description>
+    </item>
+    
+    <item>
+      <title>Recent trends in house prices</title>
+      <link>http://lenkiefer.com/2017/02/19/house-price-update/</link>
+      <pubDate>Sun, 19 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/19/house-price-update/</guid>
+      <description>IN LATE 2016 HOUSE PRICES recovered back to their pre-recession peak. At least nationally. At least not adjusted for inflation. Let’s talk about it.
+National trendsThe chart below shows the Freddie Mac House Price Index (link to source) for the United States from December 2000 to December 2016.
+Prior to the Great Recession, house prices reached their seasonally-adjusted peak in March of 2007. Prices fell from 2007 (with a brief interruption due to the first time homebuyer tax credit) to December 2011 when they reached their post-recession minimum.</description>
+    </item>
+    
+    <item>
+      <title>Experimenting with expanding axes</title>
+      <link>http://lenkiefer.com/2017/02/11/expanding-axis/</link>
+      <pubDate>Sat, 11 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/11/expanding-axis/</guid>
+      <description>LET US EXPERIMENT A BIT WITH AXES. In this post I’m going to try out some data visualization ideas expanding on our earlier work with ticks marks (see post ticks out).
+We’re going to make the following plot and some variations with R. As before, we’ll use data we used in our mortgage rate post to explore weekly average mortgage rates in the United States based on Freddie Mac’s Primary Mortgage Market Survey.</description>
+    </item>
+    
+    <item>
+      <title>House prices are highest in coastal metros</title>
+      <link>http://lenkiefer.com/2017/02/09/coastal-metros/</link>
+      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/09/coastal-metros/</guid>
+      <description>TODAY THE NATIONAL ASSOCIATION OF REALTORS (NAR) released (press release) data on metro area median sales prices of existing single-family homes (the U.S. Census and HUD report data on new home sales prices in a joint release). NAR makes the data available (Excel file).
+Let’s take a look at the data:
+## Warning: Removed 1 rows containing missing values (position_stack).## Warning: Removed 1 rows containing missing values (geom_text).## Warning in grid.</description>
+    </item>
+    
+    <item>
+      <title>Hello Ninja! Crafting a browser-based presentation and how I got (re)started with R</title>
+      <link>http://lenkiefer.com/2017/02/04/hello-ninja/</link>
+      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/04/hello-ninja/</guid>
+      <description>I GIVE A LOT OF TALKS. Some are formal presentations or keynotes to large groups, while many are in small group settings. Sometimes I get impromptu requests so I have to be ready pretty much at all times to give some sort of talk.
+On this blog I’ve shared many different DATA VISUALIZATIONS which could be part of a talk. Many of the more complex visualizations-probably most of the animated gifs-wouldn’t work great in most presentation settings.</description>
+    </item>
+    
+    <item>
+      <title>Wrangling employment data, plotting trends</title>
+      <link>http://lenkiefer.com/2017/02/01/emp-trends/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2017/02/01/emp-trends/</guid>
+      <description>We will get back to house prices soon.
+IN THIS POST I WANT TO EXPLORE EMPLOYMENT TRENDS at the state and metro area. Today the U.S. Bureau of Labor Statistics (BLS) released data on state and metro area employment trends. Last month we looked at unemployment trends. Today we’ll look at trends in nonfarm employment.
+Wrangling the dataWe will be importing, preparing, and plotting our data with R. We can get the data pretty easily using the files BLS prepares, though we have to do a little bit of work to organize the data.</description>
+    </item>
+    
+    <item>
+      <title>Simple tweenr animations with ggplot2 </title>
+      <link>http://lenkiefer.com/2016/12/19/more-tweenr-housing/</link>
+      <pubDate>Mon, 19 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/12/19/more-tweenr-housing/</guid>
+      <description>Animations with tweenrIN THIS POST WE ARE GOING TO CREATE TWO SIMPLE animated data visualizations using R ggplot2, animation, and tweenr packages.
+See this post about tweenr for an introduction to tweenr, and more examples here and here.
+Unlike those examples we are going to create visualizations using the data that ship with the tidyverse packages (mainly ggplot2). This will allow for easier replication.
+A simple stripped down example.</description>
+    </item>
+    
+    <item>
+      <title>Visual meditations on house prices, Part 7: Don&#39;t cross the streams!</title>
+      <link>http://lenkiefer.com/2016/12/03/visual-meditations-on-house-prices-part7/</link>
+      <pubDate>Sat, 03 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/12/03/visual-meditations-on-house-prices-part7/</guid>
+      <description>IntroductionON FRIDAY I MADE SOME ACCIDENTAL data art. I ended up with something pretty much useless, but kind of pretty. I shared it on Twitter:
+made an unintentional sorta streamgraph #graphfail pic.twitter.com/uW4IOnbrcL— Leonard Kiefer (@lenkiefer) December 1, 2016We’ll see if we can redeem this graphfail in another Visual Meditation on house prices.
+Visual MeditationsI’ve been collecting various graphical thoughts about house prices in my Visual Meditations series.</description>
+    </item>
+    
+    <item>
+      <title>Visual meditations on house prices, Part 6: state recovery</title>
+      <link>http://lenkiefer.com/2016/11/03/2016-11-03-visual-meditations-on-house-prices-part6/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/11/03/2016-11-03-visual-meditations-on-house-prices-part6/</guid>
+      <description>Introduction HOUSE PRICES HAVE NOW RECOVERED BACK TO THEIR PRE-RECESSION PEAK, at least according to some indices. The Freddie Mac House Price Index, for example, surpassed its pre-2008 peak in the latest release for data through September 2016. In this post I&amp;rsquo;ll be exploring trends in house prices and exploring different ways of showing how far house prices have come, and in some cases, how far they still have to go.</description>
+    </item>
+    
+    <item>
+      <title>Distribution of mortgage loan amounts in 2015</title>
+      <link>http://lenkiefer.com/2016/10/11/hmda-viz1/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/10/11/hmda-viz1/</guid>
+      <description>IN THIS POST I WANT TO CREATE some data visualizations with R using the recently released Home Mortgage Disclosure Act (HMDA) data.
+For this post I&amp;rsquo;m going to return to the 2015 HMDA that you can get from the Consumer Financial Protection Bureau (CFPB) webpage and I discussed earlier.
+Check out my prior post for more discussion of how we build these data visualizations.
+R code for graphs posted below</description>
+    </item>
+    
+    <item>
+      <title>Data visualizations for the week of September 22, 2016</title>
+      <link>http://lenkiefer.com/2016/09/22/week-in-gif/</link>
+      <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/22/week-in-gif/</guid>
+      <description>IT WAS A BUSY WEEK FOR ECONOMIC AND HOUSING DATA this week. Below are some data visaulizations I made tracking key trends in economic and housing market data.
+Homeowner equity increases to $12.7 Trillion in the second quarter of 2016 With house prices rising by nearly 6 percent on a year-over-year basis, homeowners are building back equity. According to the Federal Reserve&amp;rsquo;s Flow of Funds, owners&amp;rsquo; equity in real estate was $12.</description>
+    </item>
+    
+    <item>
+      <title>Industry-specific Beveridge Curves</title>
+      <link>http://lenkiefer.com/2016/09/14/bev-curves/</link>
+      <pubDate>Wed, 14 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/14/bev-curves/</guid>
+      <description>IN MY PREVIOUS POST we looked at the Job Openings and Labor Turnover Survey (JOLTS) data and plotted a Beveridge Curve. In this post I want to add some more code that allows us to plot Beveridge Curves by industry.
+For more on the analysis of industry-specific Beveridge Curves, see this paper published in the June 2012 Monthly Labor Review that decomposes shifts in the Beveridge Curve and looks at it by industry.</description>
+    </item>
+    
+    <item>
+      <title>JOLTS! Job openings and labor turnover trends</title>
+      <link>http://lenkiefer.com/2016/09/10/job-openings-and-hires/</link>
+      <pubDate>Sat, 10 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/10/job-openings-and-hires/</guid>
+      <description>IN THIS POST WE&amp;rsquo;LL LOOK AT recent job openings and hires data from the Bureau of Labor Statistics Job Openings and Labor Turnover Survey (JOLTS).
+R code for selected graphs posted below
+Job openings and labor turnover Total nonfarm trends Let&amp;rsquo;s start by looking at aggregate national trends for total nonfarm sector. The plot below compares hires, job openings and separations (the sum of quits, layoffs and discharges, and other separations) over time.</description>
+    </item>
+    
+    <item>
+      <title>What we spend: Consumer Expenditures in 2015</title>
+      <link>http://lenkiefer.com/2016/09/02/consumer-spend/</link>
+      <pubDate>Fri, 02 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/09/02/consumer-spend/</guid>
+      <description>.showopt { background-color: #004c93; color: #FFFFFF; width: 100px; height: 20px; text-align: center; vertical-align: middle !important; float: right; font-family: sans-serif; border-radius: 8px; } .showopt:hover { background-color: #dfe4f2; color: #004c93; } pre.plot { background-color: white !important; }   EARLIER THIS WEEK THE U.S. BUREAU OF LABOR STATISTICS released data on consumer expenditures in 2015. In this post I want to examine these data and make a few visualizations. R code for graphs posted below</description>
+    </item>
+    
+    <item>
+      <title>Recent economic and housing market trends: August 2016</title>
+      <link>http://lenkiefer.com/2016/08/27/housing-market-update/</link>
+      <pubDate>Sat, 27 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/27/housing-market-update/</guid>
+      <description>.col2 { columns: 2 200px; /* number of columns and width in pixels*/ -webkit-columns: 2 200px; /* chrome, safari */ -moz-columns: 2 200px; /* firefox */ } .col3 { columns: 3 100px; -webkit-columns: 3 100px; -moz-columns: 3 100px; }  IN THIS POST WE&amp;rsquo;LL REVIEW some recent economic and housing market trends. R code for graphs posted below
+Low mortgage rates Mortgage rates remain low, with the 30-year fixed mortgage averaging 3.</description>
+    </item>
+    
+    <item>
+      <title>Density squared</title>
+      <link>http://lenkiefer.com/2016/08/26/more-on-pop-distribution/</link>
+      <pubDate>Fri, 26 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/26/more-on-pop-distribution/</guid>
+      <description>WE ARE GOING TO EXAMINE THE DISTRIBUTION OF US POPULATION and make an animated gif combining a map and a kernel density estimate of the distribution of county population densities. Density of densities, or density squared.
+We are going to use the same US County Population Estimates 1790-2010 we used in my previous post.
+We&amp;rsquo;ll end up with this:
+How do we do it?
+Code First, we&amp;rsquo;ll load the data and do some manipulations.</description>
+    </item>
+    
+    <item>
+      <title>U.S. county population: 1790-2010</title>
+      <link>http://lenkiefer.com/2016/08/23/us-pop-map-1790-2010/</link>
+      <pubDate>Tue, 23 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/23/us-pop-map-1790-2010/</guid>
+      <description>SOMETIMES YOU ACTUALLY LEARN SOMETHING from social media. Today on Twitter I happened across this Tweet via @kyle_e_walker:
+Anybody want population estimates for every US county &amp;amp; metro back to 1790? Well, here are mine. Have fun!https://t.co/QqdA6226kN
+&amp;mdash; Jonathan Schroeder (@j_p_schroeder) August 15, 2016 
+Seems somebody posted estimates of the U.S. population by county (defined by 2010 county definitions) going back to 1790. This is a perfect dataset to practice my mapping with R.</description>
+    </item>
+    
+    <item>
+      <title>Maps, mortgages and me</title>
+      <link>http://lenkiefer.com/2016/08/21/maps-mortgages-and-me/</link>
+      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/21/maps-mortgages-and-me/</guid>
+      <description>IN THIS POST I WANT TO DOCUMENT some R code I&amp;rsquo;ve recently been working on combining maps and distribution plots. As I discussed earlier lots of interesting data will be released in the fall and I want to be ready for it.
+Some of these snippets can be recycled when the new data is available.
+Maps One area of data visualization with R I haven&amp;rsquo;t explored much is mapping. Part of this reason is because I&amp;rsquo;ve had other tools to use, but usually it&amp;rsquo;s because I&amp;rsquo;m in a hurry.</description>
+    </item>
+    
+    <item>
+      <title>Data swarms: Your firearms are useless against them!</title>
+      <link>http://lenkiefer.com/2016/08/18/data-swarm/</link>
+      <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/18/data-swarm/</guid>
+      <description>AUGUST IS ALMOST OVER, and it&amp;rsquo;s nearly back to school season. And that means one thing. No, not that we&amp;rsquo;re about to get a chance to watch the #1 NCAA football program of all time dominate the gridiron (though that&amp;rsquo;s awesome too). No, it&amp;rsquo;s data release season! A data swarm is on its way.
+From American Community Survey to the American Housing Survey to the annual Home Mortgage Disclosure Act Data many statistical data releases come out in September and October.</description>
+    </item>
+    
+    <item>
+      <title>Visual meditations on house prices, Part 5: distributions</title>
+      <link>http://lenkiefer.com/2016/08/2016/08/13/visual-meditations-on-house-prices-part5/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/2016/08/13/visual-meditations-on-house-prices-part5/</guid>
+      <description>OVER THE PAST THREE MONTHS I HAVE MADE several new house price visualizations. In these meditations I&amp;rsquo;ll consider some recent graphs and provide R code for them. For reference, prior meditations are available at:
+ Part 1: data wrangling  Part 2: sparklines and dots (animated)  Part 3: bubbles and bounce  Part 4: graph gallery   Meditation 1: Median sales price trends Earlier this week, the National Association of Realtors (NAR) released their quarterly update on metro area median house prices (data here).</description>
+    </item>
+    
+    <item>
+      <title>Consumer Credit Trends</title>
+      <link>http://lenkiefer.com/2016/08/09/trends-in-credit/</link>
+      <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/08/09/trends-in-credit/</guid>
+      <description>TODAY the NEW YORK FEDERAL RESERVE BANK released its Quarterly Report on Household Debt and Credit. These data come from the Center for Microeconomic Data based on credit records from Equifax.
+R code for the graphs are posted at bottom of page
+Trends in household debt balances One of the key statistics tracked in the report (full data can be found here) is household debt balances. They break debt balances out by loan type:</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s make a dot plot</title>
+      <link>http://lenkiefer.com/2016/06/22/make-a-dotplot/</link>
+      <pubDate>Wed, 22 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/06/22/make-a-dotplot/</guid>
+      <description>IN THIS POST WE&amp;rsquo;RE GOING to make an animated version of the famous Federal Reserve dot plot comparing the dots in March 2016 to June 2016. As far as celebrity charts go, the dot plot has to be up there. Check out how much &amp;ldquo;dot plot&amp;rdquo; has grown in search popularity since the Fed introduced their dot plot in 2012:
+Ultimately, it will look something like this:
+The dot plot is a special chart that shows the distribution of expectations of the Federal Open Market Committee (FOMC) for the federal funds rate.</description>
+    </item>
+    
+    <item>
+      <title>Dataviz Remix: Housing Trilemma</title>
+      <link>http://lenkiefer.com/2016/06/09/dataviz-remix-housing-trilemma/</link>
+      <pubDate>Thu, 09 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/06/09/dataviz-remix-housing-trilemma/</guid>
+      <description>A dataviz remix I came across some interesting analysis from Josh Lehner at the Oregon Office of Economic Analysis about the &amp;ldquo;Housing Trilemma&amp;rdquo;.
+The Housing Trilemma, captured in the chart below is based on the following claim:
+ Every city wants to have a strong local economy, high quality of life and housing affordability for its residents. Unfortunately these three dimensions represent the Housing Trilemma. A city can achieve success on two but not all three at the same time.</description>
+    </item>
+    
+    <item>
+      <title>More tweenr animation examples</title>
+      <link>http://lenkiefer.com/2016/05/30/more-tweenr-animations/</link>
+      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/30/more-tweenr-animations/</guid>
+      <description>IN THIS POST I WANT TO PROVIDE some additional examples of using tweenr and gganimate to create nice smooth transitions in an animated GIF. In this post we&amp;rsquo;ll look at an animated waterfall chart.
+For this data I&amp;rsquo;m going to use the National Income and Products Accounts from the U.S. Bureau of Economic Analysis (BEA). Specifically we&amp;rsquo;ll be looking at the contributions to growth in Real Gross Domstic Product, which you can find here.</description>
+    </item>
+    
+    <item>
+      <title>Improving R animated GIFs with tweenr</title>
+      <link>http://lenkiefer.com/2016/05/29/improving-r-animated-gifs-with-tweenr/</link>
+      <pubDate>Sun, 29 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/29/improving-r-animated-gifs-with-tweenr/</guid>
+      <description>.col2 { columns: 2 200px; /* number of columns and width in pixels*/ -webkit-columns: 2 200px; /* chrome, safari */ -moz-columns: 2 200px; /* firefox */ } .col3 { columns: 3 100px; -webkit-columns: 3 100px; -moz-columns: 3 100px; }  RECENTLY I HAVE MADE several animated GIFs, primarily using the animation package. These gifs usually work pretty well, coming out something like this (code here).
+Unfortunately, these gifs tend to come out rather choppy.</description>
+    </item>
+    
+    <item>
+      <title>Population growth, housing supply, and house prices</title>
+      <link>http://lenkiefer.com/2016/05/22/population-growth-housing-supply-and-house-prices/</link>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/22/population-growth-housing-supply-and-house-prices/</guid>
+      <description>EARLIER THIS WEEK THE U.S. CENSUS BUREAU released data on population and housing units for counties across the U.S. in 2015. These data reveal important trends in population growth, and help shed light on recent house price trends.
+Housing unit growth One key factor driving housing market dynamics is the expansion of housing supply (or lack thereof). The updated estimates from Census allow us to see which areas have added the most housing units and how that relates to population and house price trends.</description>
+    </item>
+    
+    <item>
+      <title>Mortgage rates, some perspective</title>
+      <link>http://lenkiefer.com/2016/05/15/mortgage-rates-some-perspective/</link>
+      <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/05/15/mortgage-rates-some-perspective/</guid>
+      <description>Another mortgage rates animated gif IN THE PAST I&amp;rsquo;ve told you how I made my mortgage rates gif. In this post I&amp;rsquo;m make an extension that uses stop motion techniques to reverse course. We&amp;rsquo;ll end up with this:
+For reference, here&amp;rsquo;s the standard gif I share each Thursday after mortgage rates come out:
+Stop motion animation While thinking about the week-to-week movements in rates it&amp;rsquo;s easy to lose longer-term perspective.</description>
+    </item>
+    
+    <item>
+      <title>dot plots and distributions</title>
+      <link>http://lenkiefer.com/2016/04/06/dot-plots-and-distributions/</link>
+      <pubDate>Wed, 06 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://lenkiefer.com/2016/04/06/dot-plots-and-distributions/</guid>
+      <description>We&amp;rsquo;re going to make this chart (and talk about it)
+Wait, what is this?
+Let&amp;rsquo;s pause the animation and look at the last frame:
+This plot shows the distribution of metro area unemployment. These data are available here.
+Each dot represents a metro area with its unemployment rate depicted on the x axis. The data are bucketed into 0.25 percentage point buckets and stacked when more than one metro falls within that range.</description>
+    </item>
+    
+  </channel>
+</rss>

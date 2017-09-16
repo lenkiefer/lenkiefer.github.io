@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Economics on Len Kiefer</title>
+    <link>/tags/economics/</link>
+    <description>Recent content in Economics on Len Kiefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Len Kiefer</copyright>
+    <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/economics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Forecasting is hard (work)</title>
+      <link>/2017/08/27/forecast/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/08/27/forecast/</guid>
+      <description>IN THIS POST WE WILL STUDY FORECASTS OF US ECONOMIC CONDITIONS.
+Niels Bohr quipped:
+Prediction is very difficult, especially if it’s about the future.
+I’m a macroeconomist by training, and my day job sometimes requires me to forecast the future so I can relate. Predicting the future can be quite difficult.
+In this post, we’ll analyze forecasts of economic conditions from professional forecasters using R to wrangle the data and construct plots.</description>
+    </item>
+    
+  </channel>
+</rss>
